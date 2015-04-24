@@ -1,18 +1,14 @@
-/*
-
-d888888P            oo
-   88
-   88    dP  dP  dP dP 88d888b. .d8888b.
-   88    88  88  88 88 88'  `88 88ooood8
-   88    88.88b.88' 88 88    88 88.  ...
-   dP    8888P Y8P  dP dP    dP `88888P'
-
-Author: Browser London
-Website: http://browserlondon.com
-Repo: https://bitbucket.org/browserlondon/twine
-Staff: James Blizzard, Alex Longshaw, Josh Johnson
-
-*/
+// Import Gov.uk styles
+@import "../govuk_frontend_toolkit/stylesheets/colours";
+@import "../govuk_frontend_toolkit/stylesheets/conditionals";
+@import "../govuk_frontend_toolkit/stylesheets/css3";
+@import "../govuk_frontend_toolkit/stylesheets/device-pixels";
+@import "../govuk_frontend_toolkit/stylesheets/grid_layout";
+@import "../govuk_frontend_toolkit/stylesheets/measurements";
+@import "../govuk_frontend_toolkit/stylesheets/shims";
+@import "../govuk_frontend_toolkit/stylesheets/typography";
+@import "../govuk_frontend_toolkit/stylesheets/design-patterns/media-player";
+@import "../govuk_frontend_toolkit/stylesheets/design-patterns/buttons";
 
 // Variables
 @import "variables/all";

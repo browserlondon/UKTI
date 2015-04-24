@@ -33,6 +33,20 @@ module.exports = function(grunt) {
             }
         },
 
+        connect: {
+            options: {
+                port: 9000,
+                livereload: 35729,
+                hostname: 'localhost'
+            },
+            livereload: {
+                options: {
+                    open: true,
+                    base: ['']
+                }
+            }
+        },
+
         sass: {
             options: {
                 bundleExec: true,
@@ -194,11 +208,10 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('dev', function(target) {
-        grunt.task.run([
-            'watch'
-        ]);
-    });
+    grunt.registerTask('dev', [
+        'connect',
+        'watch'
+    ]);
 
     grunt.registerTask('images', [
         'svgmin:app',
