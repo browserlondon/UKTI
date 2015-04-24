@@ -1,0 +1,100 @@
+//
+// Responsive: Utility classes
+// --------------------------------------------------
+
+// IE10 in Windows (Phone) 8
+//
+// Support for responsive views via media queries is kind of borked in IE10, for
+// Surface/desktop in split view and for Windows Phone 8. This particular fix
+// must be accompanied by a snippet of JavaScript to sniff the user agent and
+// apply some conditional CSS to *only* the Surface/desktop Windows 8. Look at
+// our Getting Started page for more information on this bug.
+//
+// For more information, see the following:
+//
+// Issue: https://github.com/twbs/bootstrap/issues/10497
+// Docs: http://getbootstrap.com/getting-started/#browsers
+// Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+
+@-ms-viewport { width: device-width; }
+
+// Visibility utilities
+
+@include responsive-invisibility(".visible-xs, .visible-sm, .visible-md, .visible-lg");
+
+@include respond-max($screen-xs-max) {
+    @include responsive-visibility(".visible-xs");
+}
+
+@include respond-min-max($screen-sm-min, $screen-sm-max) {
+    @include responsive-visibility(".visible-sm");
+}
+
+@include respond-min-max($screen-md-min, $screen-md-max) {
+    @include responsive-visibility(".visible-md");
+}
+
+@include respond-min($screen-lg-min) {
+    @include responsive-visibility(".visible-lg");
+}
+
+@include respond-max($screen-xs-max) {
+    @include responsive-invisibility(".hidden-xs");
+}
+
+@include respond-min-max($screen-sm-min, $screen-sm-max) {
+    @include responsive-invisibility(".hidden-sm");
+}
+
+@include respond-min-max($screen-md-min, $screen-md-max) {
+    @include responsive-invisibility(".hidden-md");
+}
+
+@include respond-min($screen-lg-min) {
+    @include responsive-invisibility(".hidden-lg");
+}
+
+@include respond-min($screen-xl-min) {
+    @include responsive-visibility(".visible-xl");
+}
+
+// Print utilities
+//
+// Media queries are placed on the inside to be mixin-friendly.
+
+@include responsive-invisibility(".visible-print");
+
+@include print {
+    @include responsive-visibility(".visible-print");
+}
+
+@include print {
+    @include responsive-invisibility(".hidden-print");
+}
+
+.clear-left { clear: left; }
+
+// Responsive clearing
+.clear-left-xs {
+    @include respond-max($screen-xs-max) {
+        clear: left;
+    }
+}
+
+.clear-left-sm {
+    @include respond-min($screen-sm-min) {
+        clear: left;
+    }
+}
+
+.clear-left-md {
+    @include respond-min($screen-md-min) {
+        clear: left;
+    }
+}
+
+.clear-left-lg {
+    @include respond-min($screen-lg-min) {
+        clear: left;
+    }
+}

@@ -1,0 +1,123 @@
+/*
+* Name: Profile
+* Use: Customised media objects designed for showing user name + info and avatars together
+* Modifiers: Avatar size
+* Note: Extends flag and media objects
+-------------------------------------------------------------- */
+
+.profile {
+    margin-top: 0;
+    vertical-align: top;
+    .media__object, .flag__object {
+        margin-right: 18px;
+    }
+    .media__body, .flag__body {
+        p {
+            margin-bottom: $guttering / 4;
+        }
+    }
+}
+
+
+// Xs
+.profile--xs {
+    line-height: $line-height-xs;
+    .media__object, .flag__object {
+        margin-right: 15px;
+        width: $twine-media-xs-size;
+        margin-top: 0;
+    }
+    .profile__img--initials {
+        line-height: $twine-media-xs-size;
+    }
+    .media__body, .flag__body {
+        white-space: nowrap;
+    }
+}
+
+// Sm
+.profile--sm {
+    line-height: $line-height-xs;
+    .media__object, .flag__object {
+        width: $twine-media-xs-size;
+        @include respond-min($screen-sm-min) {
+            width: $twine-media-sm-size;
+        }
+    }
+    .profile__img--initials {
+        line-height: $twine-media-xs-size;
+        @include respond-min($screen-sm-min) {
+            width: $twine-media-sm-size;
+        }
+    }
+}
+
+// Md
+.profile--md {
+    margin: 1em 0;
+    .media__object, .flag__object {
+        width: $twine-media-xs-size;
+        @include respond-min($screen-sm-min) {
+            width: $twine-media-md-size;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .profile__img--initials {
+        line-height: $twine-media-xs-size;
+        @include respond-min($screen-sm-min) {
+            width: $twine-media-md-size;
+        }
+    }
+}
+
+// Lg
+.profile--lg {
+    .media__object, .flag__object {
+        width: 200px;
+    }
+}
+
+// Xl
+.profile--xl {
+    .media__object, .flag__object {
+        width: 100%;
+    }
+}
+
+.profile__name {
+    display: block;
+    @include text-overflow;
+}
+
+.profile__img {
+    width: 100%;
+    background-size: 100%;
+}
+
+.profile__img--fallback, .profile__img--placeholder {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background-color: #F9F9F9;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.profile__img--placeholder {
+    background-image: url("../images/svg/avatar-fallback.svg");
+    background-size: 90%;
+}
+
+.profile__img--initials {
+    background-color: lighten($brand-grey-lighter, 2.5%);
+    text-align: center;
+    font-size: $font-size-sm;
+    text-transform: uppercase;
+    box-shadow: inset 0px 0px 0px 1px $brand-keyline;
+    color: $brand-text;
+}
+
+.profile__first-name, .profile__last-name { text-transform: capitalize; }

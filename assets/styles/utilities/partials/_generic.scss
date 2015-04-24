@@ -1,0 +1,168 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+.disabled, .is-disabled, fieldset[disabled]{ cursor: not-allowed; }
+
+.no-decoration {
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.kill-scroll { 
+    height: 100%;
+    overflow: hidden; 
+}
+
+.guttering { @include guttering; }
+
+// Floats
+
+.clearfix { @include clearfix; }
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Only display content to screen readers
+
+.sr-only, %sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.invisible { visibility: hidden; }
+
+.text-hide { @include text-hide; }
+
+.text-no-wrap { white-space: nowrap; }
+
+.text-interaction:hover { cursor: pointer; }
+
+.text-responsive-lg {
+    @include respond-max($screen-lg) {
+        font-size: $font-size-sm;
+    }
+}
+
+.text-responsive-md {
+    @include respond-max($screen-md) {
+        font-size: $font-size-sm;
+    }
+}
+
+.no-select { user-select: none; }
+
+.offset-icon {
+    padding-left: 2em;
+    .icon {
+        margin-left: -2em;
+        margin-right: 1em;
+    }
+}
+
+// Hide from screenreaders and browsers
+
+.hide, %hide { display: none !important; }
+
+.show { display: block !important; }
+
+.hidden, %hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.hidden-js {
+    .js & {
+        display: none !important;
+    }
+}
+
+// IE specific
+.visible-ie {
+    display: none;
+    .lt-ie9 & {
+        display: block !important;
+    }
+}
+
+.hidden-ie  {
+    .lt-ie9 & {
+        display: none !important;
+    }
+}
+
+// Show if svg is supported
+.visible-svg {
+    .no-svg & {
+        display: none !important;
+    }
+}
+
+// Hide if svg is supported
+.hidden-svg {
+    .svg & {
+        display: none !important;
+    }
+}
+
+// Float spacing
+
+.pull-right { float: right !important; }
+
+.pull-left { float: left !important; }
+
+// Add spacing
+
+.push { margin: $guttering !important; }
+
+.push-left { margin-left: $guttering !important; }
+
+.push-right { margin-right: $guttering !important; }
+
+.push-bottom { margin-bottom: $guttering !important; }
+
+.push-top { margin-top: $guttering !important; }
+
+
+.nudge { margin: $guttering/3 !important; }
+
+.nudge-left { margin-left: $guttering/3 !important; }
+
+.nudge-right { margin-right: $guttering/3 !important; }
+
+.nudge-bottom { margin-bottom: $guttering/3 !important; }
+
+.nudge-top { margin-top: $guttering/3 !important; }
+
+// Remove spacing
+
+.zero { margin: 0 !important; }
+
+.zero-top { margin-top: 0 !important; }
+
+.zero-bottom { margin-bottom: 0 !important; }
+
+.zero-left { margin-left: 0 !important; }
+
+.zero-right {  margin-right: 0 !important; }
+
+.zero-pad { padding: 0 !important; }
+
+.zero-pad-bottom { padding-bottom: 0 !important; }
+
+.zero-pad-top { padding-top: 0 !important; }
+
+.zero-pad-left { padding-left: 0 !important; }
+
+.zero-pad-right { padding-right: 0 !important; }

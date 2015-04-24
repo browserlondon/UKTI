@@ -1,0 +1,193 @@
+/*
+* Name: Buttons
+* Note: N/A
+-------------------------------------------------------------- */
+
+// Base styles
+// --------------------------------------------------
+.btn, %btn {
+    display: inline-block;
+    margin-bottom: 0;
+    // For input.btn
+    font-weight: $btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 2px solid darken($input-bg, 7.5%);
+    white-space: nowrap;
+    font-size: $font-size-base;
+    @include button-size($padding-vertical-base, $padding-horizontal-base, $line-height-base, $input-border-radius);
+    user-select: none;
+    &:focus {
+        @include tab-focus;
+    }
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        outline: 0;
+        border-bottom-width: 2px;
+        border-color: darken($input-bg, 12.5%);
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        border-bottom-width: 2px;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        pointer-events: none;
+        // Future-proof disabling of clicks
+        @include opacity(0.65);
+        box-shadow: none;
+    }
+    + .btn:not(.page__control) {
+        margin-left: .5em;
+    }
+
+    @include respond-max($screen-sm) { font-size: $font-size-sm; }
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn--default, %btn--default {
+    @include button-variant($brand-primary, $btn-default-bg, $btn-default-border);
+}
+
+.btn--link, %btn--link {
+    color: $brand-link;
+    &:hover,
+    &:focus {
+        color: darken($brand-link, 5%);
+    }
+}
+
+
+.btn--primary, %btn--primary {
+    @include button-variant($btn-primary-color, $brand-primary, darken($brand-primary, 5%));
+}
+
+// Success appears as green
+.btn--success, %btn--success {
+    @include button-variant($btn-success-color, $brand-success, darken($brand-success, 5%));
+}
+
+// Warning appears as orange
+.btn--warning, %btn--warning {
+    @include button-variant($btn-warning-color, $brand-warning, darken($brand-warning, 5%));
+}
+
+// Danger and error appear as red
+.btn--danger, %btn--danger {
+    @include button-variant($btn-danger-color, $brand-danger, darken($brand-danger, 5%));
+}
+
+// Delete
+.btn--delete, %btn--delete {
+    @include button-variant($brand-danger, white, darken($input-bg, 7.5%));
+}
+
+.btn--outline, %btn--outline {
+    @include button-variant(white, rgba(black, .05), white);
+    @include on-interaction {
+        background-color: rgba(black, .1);
+    }
+}
+
+.btn--outline-inverse, %btn--outline-inverse {
+    @include button-variant($btn-default-color, white, white);
+    @include on-interaction {
+        background-color: white;
+    }
+}
+
+.btn--default-inverse, %btn--default-inverse {
+    color: white;
+    transition: background .25s, color .25s;
+    &:hover, &:visited, &:active, &:focus {
+        color: white;
+    }
+    &:hover {
+        color: white;
+        transition: background .25s, color .25s;
+    }
+}
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn--link, %btn--link {
+    font-weight: normal;
+    cursor: pointer;
+    border-radius: 0;
+    &,
+    &:active,
+    &[disabled],
+    fieldset[disabled] & {
+        background-color: transparent;
+        box-shadow: none;
+    }
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: transparent;
+    }
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        background-color: transparent;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus {
+            // color: $btn-link-disabled-color;
+            text-decoration: none;
+            background-image: none;
+        }
+    }
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn--lg, %btn--lg {
+    font-size: $font-size-lg;
+    @include button-size($padding-vertical-lg, $padding-horizontal-lg, $line-height-sm, $btn-border-radius);
+}
+
+.btn--sm, %btn--lg {
+    font-size: $font-size-sm;
+    @include button-size($padding-vertical-sm, $padding-horizontal-sm, $line-height-sm, $btn-border-radius);
+}
+
+.btn--xs, %btn--lg {
+    font-size: $font-size-xs;
+    @include button-size($padding-vertical-xs, $padding-horizontal-xs, $line-height-sm, $btn-border-radius);
+}
+
+// Block button
+// --------------------------------------------------
+
+.btn--block, %btn--block {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+// Vertically space out multiple block buttons
+.btn--block + .btn--block {
+    margin-top: 5px;
+}
+
+.btn--wide {
+    padding-left: $guttering/1.25;
+    padding-right: $guttering/1.25;
+}

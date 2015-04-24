@@ -1,0 +1,44 @@
+/*
+* Name: Article
+* Use:
+* Modifiers:
+* Note:
+-------------------------------------------------------------- */
+
+.article {
+    background-color: $brand-white;
+    color: $brand-text;
+    border: 1px solid $brand-keyline;
+    @include guttering;
+}
+
+.article--overlay {
+    margin: -$guttering*4.5 auto $guttering*2;
+    @include respond-min($screen-sm) {
+       margin-top: -$guttering*4.25;
+    }
+    @include respond-min($screen-md) {
+       margin-top: -$guttering*5;
+    }
+    @include respond-min($screen-lg) {
+       margin-top: -$guttering*7;
+    }
+}
+
+.article--full-width-mobile {
+    @include respond-max($screen-xs) {
+        margin-left: -$guttering;
+        margin-right: -$guttering;       
+    }
+}
+
+.article__inner {
+    h1, h2, h3, h4, h5, h6, blockquote, strong {
+        color: $brand-text;
+    }
+    color: $brand-text-secondary;
+    padding: $guttering;
+    @include respond-min($screen-sm) {
+        padding: $guttering*2;
+    }
+}

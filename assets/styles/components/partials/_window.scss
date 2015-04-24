@@ -1,0 +1,72 @@
+/*
+* Name: Window
+* Use: Structuring desktop-like apps such as messaging utilising overflow and fixed heights
+* Modifiers: N/A
+* Note: N/A
+-------------------------------------------------------------- */
+
+.window {
+    height: 100%;
+    margin: 0;
+    position: relative;
+    @include respond-max($screen-lg) {
+        // Make space for top bordering (page header used a 1px negative margin)
+        top: 1px;
+    }
+}
+
+.window__area {
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    border-left: 1px solid $brand-keyline;
+    &:first-child {
+        border-left: 0;
+    }
+    @include respond-min($screen-sm) {
+        margin-left: -1px;
+    }
+}
+
+.window__area--flexible { min-height: 0; }
+
+.window__head, .window__body {
+    padding: 0 1em;
+    position: relative;
+    clear: both;
+    @include guttering;
+}
+
+.window__head {
+    padding: 1em;
+    height: 3.65em;
+    border-bottom: 1px solid;
+    border-bottom-color: $brand-keyline;
+}
+
+.window__head--fade {
+    z-index: $zindex-window-head;
+    position: absolute;
+    width: 100%;
+    background-color: rgba(white, .75);
+}
+
+.window__body--pad { padding: 1em; }
+
+.window__body--restrict {
+    max-height: 658px;
+    overflow: hidden;
+}
+
+.window__body--restrict-scroll {
+    max-height: 600px;
+    overflow: auto;
+}
+
+.window__body--full-height { max-height: 100%; }
+
+.window__status {
+    position: relative;
+    line-height: 1;
+    @include vertical-align;
+}

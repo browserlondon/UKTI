@@ -1,0 +1,84 @@
+/*
+* Name: Logo
+* Use: For displaying Twine logo
+* Modifiers: Logo size
+* Notes: N/A
+-------------------------------------------------------------- */
+
+.logo {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    &:hover, &:focus {
+        border-bottom: 0;
+        text-decoration: none;
+    }
+}
+
+.logo--main {
+    z-index: $zindex-logo;
+}
+
+.logo--back-link {
+    @include respond-min($screen-lg) {
+        &:after {
+            position: absolute;
+            right: 0;
+            bottom: -2rem;
+            content: 'Home ↩';
+            color: $brand-text;
+            font-size: $font-size-xs;
+            line-height: $line-height-base;
+            opacity: 0;
+            transition: opacity .15s ease-in-out;
+        }
+    }
+    @include on-interaction {
+        &:after {
+            opacity: 1;
+            transition: opacity .15s ease-in-out;
+        }
+    }
+    .header--fixed & {
+        &:after {
+            display: none;
+        }
+    }
+}
+
+.logo--force-height {
+    width: auto;
+    height: auto;
+    max-height: 3.5em;
+    @include respond-min($screen-sm) {
+        max-height: 4em;
+    }
+    @include respond-min($screen-lg) {
+        max-height: 5em;
+    }
+    .ie & {
+        height: 4em;
+    }
+}
+
+.logo__img {
+    display: inline-block;
+    width: 10em;
+    vertical-align: middle;
+    transition: transform .2s ease-in-out;
+    transform-origin: left;
+    @include respond-max($screen-lg) {
+        width: 7.4em;
+    }
+
+    .header--fixed & {
+        transform: scale(.75);
+        transition: transform .2s ease-in-out; 
+    }
+}
+
+.logo__img--inverse * { 
+    fill: $brand-white;
+    transition: fill .15s ease-in-out;
+}

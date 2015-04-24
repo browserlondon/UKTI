@@ -1,0 +1,67 @@
+/* 
+* Name: Alert
+* Use: Contextual feedback messages for typical user actions
+* Modifiers: Various colour options to indicatate different states
+* Notes: See http://getbootstrap.com/javascript/#alerts / http://getbootstrap.com/components/#alerts
+-------------------------------------------------------------- */
+
+.alert {
+	width: 100%;
+	background-color: $brand-white;
+	display: block;
+	text-align: center;
+	font-weight: 500;
+	position: relative;
+	border-bottom: 1px solid $brand-keyline;
+	// z-index: $zindex-alert;
+	transition: height .25s ease-in-out;
+	@include respond-max($screen-xs) {
+		text-align: left;
+	}
+}
+
+.alert__body {
+	padding: .75em 1em;
+	@include respond-min($screen-md) {
+		position: relative;
+		top: 2.5px;
+	}
+}
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert--dismissable,
+.alert--dismissible {
+	@include respond-max($screen-xs) {
+		padding-right: 2em;
+	}
+}
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.alert--success {
+	background-color: $brand-success;
+	border-bottom-color: darken($brand-success, 5%);
+	color: white;
+}
+
+.alert--warning {
+	background-color: $brand-warning;
+	border-bottom-color: darken($brand-warning, 5%);
+	color: white;
+}
+
+.alert--danger {
+	background-color: $brand-danger;
+	border-bottom-color: darken($brand-danger, 5%);
+	color: white;
+}
+
+.alert__body {
+	max-width: 750px;
+	margin: auto;
+}

@@ -1,0 +1,75 @@
+/*
+* Name: Back to top
+* Use: An achor link to the top of the page that appears after user scroll
+* Modifiers: Responsive version that only shows at a certain breakpoint
+* Note: A back to top link has scope to be incorporated into the indicator bar
+-------------------------------------------------------------- */
+
+.screenshot {
+    display: block;
+    margin: auto;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: -1px;
+    max-width: 100em;
+}
+
+.screenshot--overflow {
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.screenshot__item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: -$guttering;
+}
+
+.screenshot__item--shadow { box-shadow: 0px 0px 30px rgba(0,0,0,0.2); }
+
+.screenshot__item--layered {
+    width: percentage(1/7);
+    z-index: $zindex-screenshot;
+    margin-left: -8%;
+    margin-bottom: -$guttering*2;
+    
+    &:first-child {
+        margin-left: 0;
+    }
+
+    @include respond-max($screen-md) {
+        margin-left: -15%;
+        width: 25%;
+    }
+
+    .csstransforms3d & {
+        transform: translateX(0) matrix3d(1.85,-1.15,0,.00008,1.5,1.5,0,-.00066,0,0,1,0,0,0,0,1.25); 
+        margin-top: 12rem;
+        margin-bottom: -18rem;
+        &:first-child {
+            margin-left: 10%;
+        }
+        
+        @include respond-min($screen-md) {
+            margin-top: 8rem;
+            margin-bottom: -14rem;
+        }
+        @include respond-min($screen-lg) {
+            margin-top: 10rem;
+        }
+        @include respond-min($screen-xl) {
+            margin-top: 15rem;
+            margin-bottom: -16rem;
+        }
+        @include respond-max($screen-sm) {
+            margin-top: 8rem;
+            margin-bottom: -10rem;
+            &:first-child {
+                margin-left: 15%;
+            }
+        }
+        @include respond-max($screen-xs) {
+            margin-top: 4rem;
+        }
+    }
+}

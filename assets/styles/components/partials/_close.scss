@@ -1,0 +1,40 @@
+/*
+* Name: Close
+* Use: Button for closing JS components (modals, dialogs, pickers etc)
+* Modifiers:
+* Notes: N/A
+-------------------------------------------------------------- */
+
+.close {
+    float: right;
+    line-height: 1;
+    font-weight: 500;
+    color: $close-color;
+    text-shadow: $close-text-shadow;
+    @include opacity(0.2);
+    transition: .2s opacity ease-in-out;
+    &:hover,
+    &:focus {
+        color: $close-color;
+        text-decoration: none;
+        cursor: pointer;
+        @include opacity(0.5);
+        transition: .2s opacity ease-in-out;
+    }
+}
+
+// Additional properties for button version
+// iOS requires the button element instead of an anchor tag.
+// If you want the anchor version, it requires `href="#"`.
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    @include on-interaction {
+        outline: 0;
+    }
+}

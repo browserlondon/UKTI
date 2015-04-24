@@ -1,0 +1,78 @@
+/*
+* Mixin name: Forms
+* Use: Form validation states
+* Notes: N/A
+-------------------------------------------------------------- */
+
+@mixin form-control-validation($brand-text: #555555, $border-color: #cccccc, $background-color: whitesmoke) {
+    // Color the label and help text
+    .form-support,
+    .control-label,
+    .radio,
+    .checkbox,
+    .radio--inline,
+    .checkbox--inline {
+        color: $brand-text;
+    }
+    // Set the border and box shadow on specific inputs to match
+    .form__control {
+        border-color: rgba($border-color, 0.25);
+        background-color: rgba($background-color, 0.2);
+        &:focus {
+            border-color: darken($border-color, 10%);
+        }
+    }
+    // Set validation states also for addons
+    .input-group__addon {
+        color: $brand-text;
+        border-color: $border-color;
+        background-color: $background-color;
+    }
+    // Optional feedback icon
+    .form__feedback {
+        color: $brand-text;
+    }
+}
+
+// Form control focus state
+//
+// Generate a customized focus state and for any input with the specified color,
+// which defaults to the `$input-border-focus` variable.
+//
+// We highly encourage you to not customize the default value, but instead use
+// this to tweak colors on an as-needed basis. This aesthetic change is based on
+// WebKit's default styles, but applicable to a wider range of browsers. Its
+// usability and accessibility should be taken into account with any change.
+//
+// Example usage: change the default blue border and shadow to white for better
+// contrast against a dark grey background.
+@mixin form-control-focus($color: $brand-primary) {
+    &:focus {
+        border-color: $color;
+        outline: 0;
+    }
+}
+
+// Form control sizing
+//
+// Relative text size, padding, and border-radii changes for form controls. For
+// horizontal sizing, wrap controls in the predefined grid classes. `<select>`
+// element gets special love because it's special, and that's a fact!
+// [converter] $parent hack
+@mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+    #{$parent} {
+        height: $input-height;
+        padding: $padding-vertical $padding-horizontal;
+        font-size: $font-size;
+        line-height: $line-height;
+        border-radius: $border-radius;
+    }
+    select#{$parent} {
+        height: $input-height;
+        line-height: $input-height;
+    }
+    textarea#{$parent},
+    select[multiple]#{$parent} {
+        height: auto;
+    }
+}

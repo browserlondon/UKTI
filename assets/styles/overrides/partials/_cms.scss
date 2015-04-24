@@ -1,0 +1,72 @@
+.gfield {
+    margin-top: 0;
+    margin-bottom: $guttering;
+}
+
+.gform_fields { @extend %list-unstyled; }
+
+.gfield_contains_required {
+    .gfield_label {
+        @extend %required;
+    }
+}
+
+.gform_validation_container, .gfield_required { @extend %hidden; }
+
+.gform_input_group {
+    @include guttering;
+    form {
+        @extend %input-group;
+        margin-bottom: 0;
+    }
+    .gfield_label {
+        @extend %sr-only;
+    }
+    .gform_fields, .gfield {
+        margin-bottom: 0;
+    }
+    .gform_body .ginput_container input {
+        @include border-left-radius(.25em);
+        @include border-right-radius(0);
+    }
+    .validation_error {
+        display: none;
+    }
+    .validation_message {
+        margin-top: 1em;
+    }
+    .gform_footer {
+        display: table-cell;
+        width: 1%;
+        white-space: nowrap;
+        vertical-align: top;
+        position: relative;
+        white-space: nowrap;
+        > .btn {
+            position: relative;
+            margin-left: -2px;
+            &:hover,
+            &:focus,
+            &:active {
+                z-index: 2;
+            }
+        }
+        input[type=submit], button[type=submit] {
+            min-width: 80px;
+            width: 100%;
+            padding-left: 1em;
+            padding-right: 1em;
+            @include border-left-radius(0);
+            @include border-right-radius(.25em);
+        }
+    }
+}
+
+.validation_error {
+    margin-bottom: $guttering;
+}
+
+.validation_message {
+    @extend %smaller;
+    color: $brand-danger;
+}

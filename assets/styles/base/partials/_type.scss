@@ -1,0 +1,389 @@
+/*
+* Name: Typography
+* Note: N/A
+-------------------------------------------------------------- */
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3014112, 2015-04-23T05:24:51-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: SoleilBk-Italic by TypeTogether
+ * URL: http://www.myfonts.com/fonts/type-together/soleil/book-italic/
+ * 
+ * Webfont: Soleil-Bold by TypeTogether
+ * URL: http://www.myfonts.com/fonts/type-together/soleil/bold/
+ * 
+ * Webfont: SoleilBk by TypeTogether
+ * URL: http://www.myfonts.com/fonts/type-together/soleil/book/
+ * 
+ * Webfont: SoleilSb by TypeTogether
+ * URL: http://www.myfonts.com/fonts/type-together/soleil/semibold/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3014112
+ * Licensed pageviews: 250,000
+ * Webfonts copyright: Copyright (c) 2011 by Wolfgang Homola, distributed by
+ * TypeTogether. All rights reserved.
+ * 
+ * © 2015 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+// @import url("//hello.myfonts.net/count/2dfDF4");
+
+  
+  
+@font-face {
+    font-family: 'Soleil';
+    src: url('../fonts/soleil/2DFF5D_1_0.eot');
+    src: url('../fonts/soleil/2DFF5D_1_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/soleil/2DFF5D_1_0.woff2') format('woff2'),url('../fonts/soleil/2DFF5D_1_0.woff') format('woff'),
+    url('../fonts/soleil/2DFF5D_1_0.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    line-height: 100%;
+    position: relative;
+    top: 2.5px;
+}
+ 
+  
+@font-face {
+    font-family: 'Soleil';
+    src: url('../fonts/soleil/2DFF5D_2_0.eot');
+    src: url('../fonts/soleil/2DFF5D_2_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/soleil/2DFF5D_2_0.woff2') format('woff2'),url('../fonts/soleil/2DFF5D_2_0.woff') format('woff'),
+    url('../fonts/soleil/2DFF5D_2_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    line-height: 100%;
+    position: relative;
+    top: 2.5px;
+}
+
+@font-face {
+    font-family: 'Soleil';
+    src: url('../fonts/soleil/2DFF5D_0_0.eot');
+    src: url('../fonts/soleil/2DFF5D_0_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/soleil/2DFF5D_0_0.woff2') format('woff2'),url('../fonts/soleil/2DFF5D_0_0.woff') format('woff'),
+    url('../fonts/soleil/2DFF5D_0_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    line-height: 100%;
+    position: relative;
+    top: 2.5px;
+}
+
+@font-face {
+    font-family: 'Soleil';
+    src: url('../fonts/soleil/2DFF5D_3_0.eot');
+    src: url('../fonts/soleil/2DFF5D_3_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/soleil/2DFF5D_3_0.woff2') format('woff2'),
+    url('../fonts/soleil/2DFF5D_3_0.woff') format('woff'),
+    url('../fonts/soleil/2DFF5D_3_0.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    line-height: 100%;
+}
+ 
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+html {
+    // Percentage allows rem values to equal pixel values i.e. 1.6rem = 16px
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    line-height: $line-height-base;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    background-color: $brand-body-bg;
+    background-image: linear-gradient(to bottom, $brand-body-bg 0%, $brand-grey-lighter 100%);
+    color: $brand-text;
+    overflow-x: hidden;
+    @include respond-max($screen-sm) { font-size: $font-size-sm; }
+}
+
+//
+// Typography
+// --------------------------------------------------
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    margin-top: 0;
+    margin-bottom: $guttering/1.5;
+    position: relative;
+    top: 2.5px;
+    small,
+    .small {
+        font-weight: normal;
+        line-height: 1;
+    }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+    small,
+    .small {
+        font-size: 65%;
+    }
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    small,
+    .small {
+        font-size: 75%;
+    }
+}
+
+h1, .h1 {
+    font-size: $font-size-h1;
+    @include respond-max($screen-sm) {
+        font-size: $font-size-h2;
+    }
+}
+
+h2, .h2 {
+    font-size: $font-size-h2;
+    @include respond-max($screen-sm) {
+        font-size: $font-size-h3;
+    }
+}
+
+h3, .h3 {
+    font-size: $font-size-h3;
+    @include respond-max($screen-sm) {
+        font-size: $font-size-h4;
+    }
+}
+
+h4, .h4 {
+    font-size: $font-size-h4;
+    @include respond-max($screen-sm) {
+        font-size: $font-size-h5;
+    }
+}
+
+h5, .h5 {
+    font-size: $font-size-h5;
+    @include respond-max($screen-sm) {
+        font-size: $font-size-h6;
+    }
+    .t-solar & {
+        font-size: 2rem;
+    }
+}
+
+h6, .h6 {
+    font-size: $font-size-h6;
+}
+
+// Links
+a {
+    text-decoration: none;
+    transition: .15s color ease-in-out;
+    color: $brand-link;
+    transition: .15s color ease-in-out, .15s border ease-in-out;
+    @include on-interaction {
+        color: darken($brand-link, 5%);
+    }
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        border-bottom: 1px solid darken($brand-link, 5%);
+        transition: .15s color ease-in-out, .15s border ease-in-out;
+    }
+    &:focus { @include tab-focus; }
+}
+
+
+//
+// Vertical rhythm
+// --------------------------------------------------
+
+p, ul, ol, dl, hr, form, table, blockquote, pre,
+.media, .well, .form-group {
+    margin-top: 0;
+    margin-bottom: $guttering;
+}
+
+p {
+    position: relative;
+    top: 2.5px;
+}
+
+// Emphasis & misc
+// -------------------------
+
+blockquote { 
+    margin: 0 0 $guttering;
+}
+
+// Horizontal rules
+hr {
+    margin-top: $line-height-computed;
+    margin-bottom: $line-height-computed;
+    border: 0;
+    border-top: 1px solid;
+    border-top-color: $brand-keyline;
+}
+
+small, .small { font-size: 85%; }
+
+.smaller, %smaller { font-size: 95%; }
+
+.text-lead { 
+    font-size: $font-size-lead;
+    @include respond-max($screen-lg) {
+        font-size: $font-size-h1;
+    }
+    @include respond-max($screen-sm) {
+        font-size: $font-size-h3;
+    }
+}
+
+.text-sub { 
+    font-size: $font-size-h4;
+    @include respond-max($screen-sm) {
+        font-size: $font-size-h6;
+    }
+}
+
+.text-serif {
+    font-family: $font-family-serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+strong, .strong { font-weight: bold; }
+
+// Alignment
+.text-right-xs {
+    @include respond-max($screen-sm) {
+        text-align: right;
+    }
+}
+
+.text-right-sm {
+    @include respond-min($screen-sm-min) {
+        text-align: right;
+    }
+}
+
+.text-link, %text-link {
+    color: $brand-link;
+    @include on-interaction {
+        color: darken($brand-link, 5%);
+    }
+}
+
+.text-link-inverse, %text-link-inverse {
+    color: $brand-white;
+    font-weight: bold;
+    border-bottom: 1px solid $brand-white;
+    @include on-interaction {
+        border-bottom-color: $brand-white;
+        color: $brand-white;
+    }
+}
+
+.text-primary, %text-primary {
+    color: $brand-primary;
+    a & {
+        @include on-interaction {
+            color: darken($brand-primary, 5%);
+        }
+    }
+}
+
+// Contextual colors
+.text-inverse {
+    color: $brand-text-inverse;
+    // Links
+    a {
+        color: $brand-link-inverse;
+        &:hover,
+        &:focus {
+            color: $brand-link-inverse;
+        }
+    }
+}
+
+// Alignment
+.text-left { text-align: left; }
+
+.text-left-md {
+    @include respond-max($screen-md) {
+        text-align: left;
+    }
+}
+
+.text-right { text-align: right; }
+
+.text-center { text-align: center; }
+
+.text-justify { text-align: justify; }
+
+.text-capitalise { text-transform: capitalize; }
+
+.text-lowercase { text-transform: lowercase; }
+
+// Contextual colors
+.text-muted { color: $text-muted; }
+
+.text-default { color: $brand-text; }
+
+.text-secondary { color: $brand-text-secondary; }
+
+.text-success { color: $brand-success; }
+
+.text-warning { color: $brand-warning; }
+
+.text-danger { color: $brand-danger; }
+
+.text-subtitle {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.disabled, .disabled:hover {
+    color: $brand-grey-light;
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+// Addresses
+address {
+    margin-bottom: $line-height-computed;
+    font-style: italic;
+    line-height: $line-height-base;
+}
