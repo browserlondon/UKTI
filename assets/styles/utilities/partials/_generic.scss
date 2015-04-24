@@ -61,15 +61,120 @@
     }
 }
 
-.no-select { user-select: none; }
 
-.offset-icon {
-    padding-left: 2em;
-    .icon {
-        margin-left: -2em;
-        margin-right: 1em;
+.text-lead { 
+    font-size: $font-size-lead;
+    @include respond-max($screen-lg) {
+        font-size: $font-size-h1;
+    }
+    @include respond-max($screen-sm) {
+        font-size: $font-size-h3;
     }
 }
+
+.text-sub { 
+    font-size: $font-size-h4;
+    @include respond-max($screen-sm) {
+        font-size: $font-size-h6;
+    }
+}
+
+.text-serif {
+    font-family: $font-family-serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+strong, .strong { font-weight: bold; }
+
+// Alignment
+.text-right-xs {
+    @include respond-max($screen-sm) {
+        text-align: right;
+    }
+}
+
+.text-right-sm {
+    @include respond-min($screen-sm-min) {
+        text-align: right;
+    }
+}
+
+.text-link, %text-link {
+    color: $brand-link;
+    @include on-interaction {
+        color: darken($brand-link, 5%);
+    }
+}
+
+.text-link-inverse, %text-link-inverse {
+    color: $brand-white;
+    font-weight: bold;
+    border-bottom: 1px solid $brand-white;
+    @include on-interaction {
+        border-bottom-color: $brand-white;
+        color: $brand-white;
+    }
+}
+
+.text-primary, %text-primary {
+    color: $brand-primary;
+    a & {
+        @include on-interaction {
+            color: darken($brand-primary, 5%);
+        }
+    }
+}
+
+// Contextual colors
+.text-inverse {
+    color: $brand-text-inverse;
+    // Links
+    a {
+        color: $brand-link-inverse;
+        &:hover,
+        &:focus {
+            color: $brand-link-inverse;
+        }
+    }
+}
+
+.text-left { text-align: left; }
+.text-left-md {
+    @include respond-max($screen-md) {
+        text-align: left;
+    }
+}
+
+.text-right { text-align: right; }
+
+.text-center { text-align: center; }
+
+.text-justify { text-align: justify; }
+
+.text-capitalise { text-transform: capitalize; }
+
+.text-lowercase { text-transform: lowercase; }
+
+// Contextual colors
+.text-muted { color: $text-muted; }
+
+.text-default { color: $brand-text; }
+
+.text-secondary { color: $brand-text-secondary; }
+
+.text-success { color: $brand-success; }
+
+.text-warning { color: $brand-warning; }
+
+.text-danger { color: $brand-danger; }
+
+.text-subtitle {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.no-select { user-select: none; }
 
 // Hide from screenreaders and browsers
 

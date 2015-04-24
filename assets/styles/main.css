@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @-ms-viewport {
   width: device-width; }
 @-o-viewport {
@@ -113,6 +114,21 @@
 /* ==========================================================================
    Mixins
    ========================================================================== */
+/*
+* Mixin name: Clearfix
+* Use: Clearing floats
+* Notes: For modern browsers
+1. The space content is one way to avoid an Opera bug when the contenteditable attribute is included anywhere else in the document.
+   Otherwise it causes space to appear at the top and bottom of elements that are clearfixed.
+2. The use of `table` rather than `block` is only necessary if using `:before` to contain the top-margins of child elements.
+
+Source: http://nicolasgallagher.com/micro-clearfix-hack/
+-------------------------------------------------------------- */
+/*
+* Mixin name: SASS-IE
+* Use: Media query handling
+* Notes: See http://jakearchibald.github.io/sass-ie/
+-------------------------------------------------------------- */
 /* ==========================================================================
    Base styles
    ========================================================================== */
@@ -327,6 +343,219 @@ th {
     .grid__row .grid__column-two-thirds {
       float: left;
       width: 66.66667%; } }
+
+/*
+* Name: Typography
+* Note: N/A
+-------------------------------------------------------------- */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  background-color: #6f777b; }
+
+body {
+  background-color: #fff;
+  line-height: 1.57895;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-size: 1.6rem; }
+  @media (max-width: 767px) {
+    body {
+      font-size: 1.4rem; } }
+
+h1, h2, h3, h4, h5, h6,
+pre, p, ul, ol, li, dl, dd, form, table, blockquote, figure, figcaption {
+  font-weight: normal;
+  font-size: 100%; }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  margin-top: 0;
+  color: #6f777b; }
+
+h1, .h1 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  padding-bottom: 20px; }
+  @media (max-width: 640px) {
+    h1, .h1 {
+      font-size: 18px;
+      line-height: 1.2; } }
+
+h2, .h2 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 700;
+  text-transform: none;
+  padding-top: 5px;
+  padding-bottom: 20px; }
+  @media (max-width: 640px) {
+    h2, .h2 {
+      font-size: 16px;
+      line-height: 1.25; } }
+
+h3, .h3 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  padding-bottom: 5px; }
+  @media (max-width: 640px) {
+    h3, .h3 {
+      font-size: 14px;
+      line-height: 1.14286; } }
+
+h4, .h4, h5, .h5, h6, .h6 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  font-weight: 700;
+  text-transform: none;
+  padding-bottom: 6px; }
+  @media (max-width: 640px) {
+    h4, .h4, h5, .h5, h6, .h6 {
+      font-size: 12px;
+      line-height: 1.25; } }
+
+p, ul, ol, form, table, dl, dd, blockquote, pre {
+  padding-bottom: 2.4rem; }
+
+ul {
+  padding-left: 2.4rem;
+  list-style: disc; }
+
+ol {
+  padding-left: 2.4rem;
+  list-style: decimal; }
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-bottom: 2.4rem;
+  padding-left: 2.4rem; }
+
+blockquote {
+  margin-bottom: 2.4rem;
+  padding: 0 2.4rem;
+  border-left: 8px solid #bfc1c3; }
+
+b,
+strong {
+  font-weight: 700; }
+
+small,
+.small {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5625;
+  font-weight: 400;
+  text-transform: none; }
+  @media (max-width: 640px) {
+    small,
+    .small {
+      font-size: 14px;
+      line-height: 1.42857; } }
+
+abbr[title] {
+  cursor: help; }
+
+.lead {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: normal;
+  color: #6f777b;
+  text-shadow: 0 0 1px rgba(222, 224, 226, 0.3); }
+  @media (max-width: 640px) {
+    .lead {
+      font-size: 18px;
+      line-height: 1.38889; } }
+
+.ll {
+  max-width: 700px; }
+
+.muted {
+  color: #f8f8f8; }
+
+.fcoservices-wrapper {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.57895;
+  font-weight: 400;
+  text-transform: none; }
+  @media (max-width: 640px) {
+    .fcoservices-wrapper {
+      font-size: 16px;
+      line-height: 1.5625; } }
+  .fcoservices-wrapper a[rel="external"]:after {
+    background-image: image-url("external-links/external-link.png");
+    background-repeat: no-repeat; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+      .fcoservices-wrapper a[rel="external"]:after {
+        background-image: image-url("external-links/external-link-24x24.png");
+        -webkit-background-size: 12px 400px;
+        background-size: 12px 400px; } }
+  .fcoservices-wrapper a[rel="external"]:after {
+    content: "    ";
+    background-position: right 6px; }
+  .fcoservices-wrapper a[rel="external"]:hover:after {
+    background-position: right -382px; }
+  .fcoservices-wrapper a[rel="external"]:after {
+    margin-left: 5px; }
+  .fcoservices-wrapper th.external-link:after {
+    background-image: image-url("external-links/external-link-black-12x12.png");
+    background-repeat: no-repeat; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+      .fcoservices-wrapper th.external-link:after {
+        background-image: image-url("external-links/external-link-black-24x24.png");
+        -webkit-background-size: 12px 400px;
+        background-size: 12px 400px; } }
+  .fcoservices-wrapper .inner a[rel="external"]:after,
+  .fcoservices-wrapper .inner a[href*="//"]:not([href*="fcoservices.gov.uk"]):after {
+    content: "     ";
+    background-position: right 3px; }
+  .fcoservices-wrapper .inner a[rel="external"]:hover:after,
+  .fcoservices-wrapper .inner a[href*="//"]:not([href*="fcoservices.gov.uk"]):hover:after {
+    background-position: right -385px; }
+
+a {
+  font-weight: 700;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+  a:link {
+    color: #005ea5; }
+  a:visited {
+    color: #4c2c92; }
+  a:hover {
+    color: #2e8aca;
+    text-decoration: underline; }
+  a:active {
+    top: 0;
+    color: #2e8aca; }
+  a:focus {
+    background-color: #ffbf47;
+    outline: 3px solid #ffbf47;
+    outline-offset: -2px; }
 
 /* ==========================================================================
    Components
