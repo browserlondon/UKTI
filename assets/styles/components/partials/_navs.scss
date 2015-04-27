@@ -27,8 +27,8 @@
     .nav__item {
         position: relative;
         display: inline-block;
-        margin-right: $guttering;
         font-weight: 400;
+        margin-right: -4px;
     }
 
     .nav__item--active { background-color: darken($brand-primary, 5%); }
@@ -36,7 +36,7 @@
     .nav__link {
         position: relative;
         display: block;
-        padding: $guttering/2;
+        padding: $guttering/2 $guttering;
         color: $brand-white;
         text-decoration: none;
         &:visited {

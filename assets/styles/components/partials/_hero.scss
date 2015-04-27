@@ -5,7 +5,7 @@
 * Notes:
 -------------------------------------------------------------- */
 
-.hero {}
+.hero { @include guttering; }
 
 .hero__title {
     @include core-48;

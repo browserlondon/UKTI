@@ -71,7 +71,7 @@ $font-family-base: $font-family-sans-serif !default;
 
 $guttering: 2.4rem;
 
-$font-size-base: 1.6rem; // 16px
+$font-size-base: 1.8rem; // 16px
 
 $font-size-lead: 3.8rem;
 
@@ -169,6 +169,8 @@ $input-border-radius: $border-radius-base;
 $input-border-focus: $brand-primary;
 
 $input-color-placeholder: $brand-text-secondary;
+
+$input-checkbox: 1em;
 
 //** Default `.form-control` height
 $input-height-base: 1.7;
