@@ -38,6 +38,10 @@
     background-color: $brand-grey-lighter;
 }
 
+.section--bordered {
+    border-top: 10px solid $brand-primary;
+}
+
 .section__content {
     margin: auto;
     display: block;

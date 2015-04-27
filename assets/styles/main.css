@@ -1129,6 +1129,9 @@ input[type=radio] {
 .section--subtle-highlight {
   background-color: #fafafa; }
 
+.section--bordered {
+  border-top: 10px solid #c81e53; }
+
 .section__content {
   margin: auto;
   display: block; }
@@ -1150,6 +1153,7 @@ input[type=radio] {
   line-height: 1.04167;
   font-weight: 400;
   text-transform: none;
+  padding-bottom: 0;
   font-weight: bold; }
   @media (max-width: 640px) {
     .hero__title {
