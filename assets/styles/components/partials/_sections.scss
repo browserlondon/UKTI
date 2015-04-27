@@ -20,6 +20,12 @@
     }
 }
 
+.section--sm {
+    @include media($min-width: $screen-lg) {
+        padding: $guttering*2;
+    }
+}
+
 .section--primary {
     background-color: $brand-primary;
     color: white;

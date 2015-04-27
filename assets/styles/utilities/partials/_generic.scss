@@ -50,13 +50,13 @@
 .text-interaction:hover { cursor: pointer; }
 
 .text-responsive-lg {
-    @include respond-max($screen-lg) {
+    @include media($max-width: $screen-lg) {
         font-size: $font-size-sm;
     }
 }
 
 .text-responsive-md {
-    @include respond-max($screen-md) {
+    @include media($max-width: $screen-md) {
         font-size: $font-size-sm;
     }
 }
@@ -64,17 +64,17 @@
 
 .text-lead { 
     font-size: $font-size-lead;
-    @include respond-max($screen-lg) {
+    @include media($max-width: $screen-lg) {
         font-size: $font-size-h1;
     }
-    @include respond-max($screen-sm) {
+    @include media($max-width: $screen-sm) {
         font-size: $font-size-h3;
     }
 }
 
 .text-sub { 
     font-size: $font-size-h4;
-    @include respond-max($screen-sm) {
+    @include media($max-width: $screen-sm) {
         font-size: $font-size-h6;
     }
 }
@@ -86,19 +86,6 @@
 }
 
 strong, .strong { font-weight: bold; }
-
-// Alignment
-.text-right-xs {
-    @include respond-max($screen-sm) {
-        text-align: right;
-    }
-}
-
-.text-right-sm {
-    @include respond-min($screen-sm-min) {
-        text-align: right;
-    }
-}
 
 .text-link, %text-link {
     color: $brand-link;
@@ -141,7 +128,7 @@ strong, .strong { font-weight: bold; }
 
 .text-left { text-align: left; }
 .text-left-md {
-    @include respond-max($screen-md) {
+    @include media($max-width: $screen-md) {
         text-align: left;
     }
 }

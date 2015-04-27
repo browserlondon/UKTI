@@ -75,27 +75,26 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 h1, .h1 {
     @include bold-24;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 h2, .h2 {
     @include bold-19;
-    padding-top: 5px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 h3, .h3 {
     @include bold-16;
-    padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 h4, .h4, h5, .h5, h6, .h6 {
     @include bold-14;
-    padding-bottom: 6px;
+    margin-bottom: 6px;
 }
 
 p, ul, ol, form, table, dl, dd, blockquote, pre {
-    padding-bottom: $guttering;
+    margin-bottom: $guttering;
 }
 
 ul {

@@ -19,8 +19,8 @@ ol {
 
 // Unstyled keeps list items block level, just removes default browser padding and list-style
 .list-unstyled, %list-unstyled {
-    padding-left: 0;
-    margin-left: 0;
+    padding: 0;
+    margin: 0;
     list-style: none;
 }
 

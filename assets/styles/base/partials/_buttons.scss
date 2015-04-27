@@ -3,18 +3,18 @@
 * Note: N/A
 -------------------------------------------------------------- */
 
-.button {
+.btn {
     @include button($brand-primary);
 }
 
-.button-success {
+.btn--success {
+    @include button($brand-success);
+}
+
+.btn--danger {
     @include button($brand-warning);
 }
 
-.button-danger {
-    @include button($brand-warning);
-}
-
-.button-warning {
+.btn--warning {
     @include button($brand-warning);
 }
