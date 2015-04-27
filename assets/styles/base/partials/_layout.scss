@@ -22,5 +22,13 @@
     .grid__column--one-fourth {
         @include grid-column(1/4);
     }
+}
 
+.grid__row--vertical-align {
+    display: table;
+    .grid__column {
+        display: table-cell;
+        vertical-align: middle;
+        float: none;
+    }
 }

@@ -390,6 +390,13 @@ th {
       float: left;
       width: 25%; } }
 
+.grid__row--vertical-align {
+  display: table; }
+  .grid__row--vertical-align .grid__column {
+    display: table-cell;
+    vertical-align: middle;
+    float: none; }
+
 /*
 * Name: Typography
 * Note: N/A
@@ -694,18 +701,22 @@ dd {
 .masthead {
   background-color: black;
   color: white;
-  padding: 0.8rem 2.4rem; }
+  padding: 0.8rem 0; }
+
+.masthead__area {
+  width: 100%; }
+
+@media (min-width: 768px) {
+  .masthead__area--align {
+    text-align: right; } }
 
 .masthead__subtext {
-  color: white;
-  display: block; }
+  text-decoration: none;
+  color: white; }
   .masthead__subtext:visited {
     color: white; }
   .masthead__subtext:hover, .masthead__subtext:active, .masthead__subtext:focus {
     color: white; }
-  @media (min-width: 768px) {
-    .masthead__subtext {
-      text-align: right; } }
 
 /*
 * Name: Nav
