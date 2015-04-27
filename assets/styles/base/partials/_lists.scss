@@ -39,7 +39,7 @@ ol {
 }
 
 .list-inline--blocked {
-    @include respond-max($screen-sm) {
+    @include media($max-width: $screen-sm) {
         > li {
             float: left;
             width: 50%;
@@ -107,48 +107,4 @@ dd {
     margin-left: 0;
     margin-bottom: $guttering;
     @include guttering;
-}
-
-// Horizontal description lists
-//
-// Defaults to being stacked without any of the below styles applied, until the
-// grid breakpoint is reached (default of ~768px).
-.dl-horizontal {
-    @include respond-min($grid-float-breakpoint) {
-        dt {
-            float: left;
-            width: $component-offset-horizontal;
-            clear: left;
-            padding-right: .5em;
-        }
-        dd {
-            padding-left: $component-offset-horizontal;
-            @include clearfix;
-        }
-    }
-}
-
-
-.dl-divided {
-    dt {
-        margin-bottom: 0;
-        @include respond-max($grid-float-breakpoint) {
-            margin-bottom: $guttering / 4;
-        }
-    }
-    dd {
-        margin-bottom: $guttering / 2;
-        padding-bottom: $guttering / 2;
-        border-bottom: 1px solid;
-        border-bottom-color: $brand-keyline;
-        &:last-child {
-            border-bottom: 0;
-        }
-    }
-    + dl {
-        margin-top: $guttering / 2;
-        padding-top: $guttering / 2;
-        border-top: 1px solid;
-        border-top-color: $brand-keyline;
-    }
 }

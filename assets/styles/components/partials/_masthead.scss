@@ -1,0 +1,26 @@
+/*
+* Name: masthead
+* Use: Wrapping logo and subtext
+* Modifiers: N/A
+* Notes: N/A
+-------------------------------------------------------------- */
+
+.masthead {
+    background-color: $brand-black;
+    color: $brand-white;
+    padding: $guttering/3 $guttering;
+}
+
+.masthead__subtext {
+    color: $brand-white;
+    display: block;
+    &:visited {
+        color: $brand-white;
+    }
+    @include on-interaction {
+        color: $brand-white;
+    }
+    @include media($min-width: $screen-sm) {
+        text-align: right;
+    }
+}

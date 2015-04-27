@@ -13,6 +13,34 @@
     }
 }
 
+/*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */
+@font-face {
+    font-family: 'nta';
+    src: url(../assets/fonts/NTA-Light-20130221-4eaebdc297260abcaaf375e80df3f3d7.eot#) format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'nta';
+    src: url(../assets/fonts/NTA-Bold-20130221-c46bf6ef74ccb57bb1796e513321ee16.eot#) format("embedded-opentype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'ntatabularnumbers';
+    src: url(../assets/fonts/NTATabularNumbers-Light-b027e1c1608902c0f6760546ba21e9fa.eot#) format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'ntatabularnumbers';
+    src: url(../assets/fonts/NTATabularNumbers-Bold-2f19de254f212f2b939e6040032bdd1c.eot#) format("embedded-opentype");
+    font-weight: bold;
+}
+
+
 //
 // Typography
 // --------------------------------------------------
@@ -26,13 +54,13 @@ html {
 
 body {
     background-color: $white;
-    line-height: (30/19);
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: $line-height-base;
     font-size: $font-size-base;
-    @include respond-max($screen-sm) { font-size: $font-size-sm; }
+    font-family: $NTA-Light;
+    @include media($max-width: $screen-sm) { font-size: $font-size-sm; }
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -43,7 +71,6 @@ pre, p, ul, ol, li, dl, dd, form, table, blockquote, figure, figcaption {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     margin-top: 0;
-    color: $grey-1;
 }
 
 h1, .h1 {
@@ -126,37 +153,12 @@ abbr[title] {
     color: $grey-4;
 }
 
-.fcoservices-wrapper {
-    @include core-19($line-height: (30/19), $line-height-640: (25 / 16));
-
-    // a[href*="//"]:not([href*="fcoservices.gov.uk"]),
-    a[rel="external"] {
-        @include external-link-default;
-        @include external-link-19;
-
-        &:after {
-            margin-left: 5px;
-        }
-    }
-
-    th.external-link {
-        @include external-link-heading;
-    }
-
-    .inner a[rel="external"],
-    .inner a[href*="//"]:not([href*="fcoservices.gov.uk"]) {
-        @include external-link-16;
-    }
-}
 
 // Default link style
 a {
+    color: $link-colour;
     font-weight: 700;
     -webkit-tap-highlight-color: rgba(0,0,0,0.3);
-
-    &:link {
-        color: $link-colour;
-    }
 
     &:visited {
         color: $link-visited-colour;
@@ -175,6 +177,6 @@ a {
     &:focus {
         background-color: $yellow;
         outline: 3px solid $yellow;
-        outline-offset: -2px;
+        outline-offset: -3px;
     }
 }

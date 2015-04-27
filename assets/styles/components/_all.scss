@@ -2,6 +2,9 @@
    Components
    ========================================================================== */
 
+@import "partials/skiplink";
+@import "partials/masthead";
+@import "partials/navs";
 // @import "partials/icons";
 // @import "partials/article";
 // @import "partials/close";
@@ -15,7 +18,7 @@
 // @import "partials/alert";
 // @import "partials/badge";
 // @import "partials/forecast";
-// @import "partials/sections";
+@import "partials/sections";
 // @import "partials/flag";
 // @import "partials/header";
 // @import "partials/widget";
@@ -34,7 +37,7 @@
 // @import "partials/data-table";
 // @import "partials/data-graph";
 // @import "partials/lead";
-// @import "partials/hero";
+@import "partials/hero";
 // @import "partials/screenshot";
 // @import "partials/timeline";
 // @import "partials/check-list";

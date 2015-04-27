@@ -7,16 +7,16 @@
 // @import "partials/opacity";
 // @import "partials/image";
 // @import "partials/labels";
-// @import "partials/responsive-visibility";
+@import "partials/responsive-visibility";
 // @import "partials/tab-focus";
 // @import "partials/text-emphasis";
-// @import "partials/text-overflow";
+@import "partials/text-overflow";
 // @import "partials/placeholder";
-// @import "partials/guttering";
-// @import "partials/on-interaction";
+@import "partials/guttering";
+@import "partials/on-interaction";
 // @import "partials/inline-block";
 // @import "partials/nth-child";
-// @import "partials/vertical-align";
+@import "partials/vertical-align";
 // @import "partials/arrows";
 
 // // Components
@@ -36,4 +36,4 @@
 @import "partials/clearfix";
 // @import "partials/grid-framework";
 // @import "partials/grid";
-@import "partials/sass-ie";
+// @import "partials/sass-ie";

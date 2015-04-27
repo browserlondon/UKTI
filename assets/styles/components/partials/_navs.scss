@@ -6,27 +6,22 @@
 -------------------------------------------------------------- */
 
 .nav {
+    width: 100%;
     padding-left: 0;
     list-style: none;
     @include clearfix;
 }
 
 .nav--primary {
+    background-color: $brand-primary;
     display: inline-block;
     vertical-align: middle;
     margin-right: -$guttering;
     margin-bottom: 0;
-    @include respond-max($screen-sm) {
-        // position: absolute;
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        left: 0;
-        top: $header-height-mobile + 1px;
-        bottom: 0;
-        z-index: $zindex-nav-primary;
-        display: none;
-        padding: $guttering 0 $guttering*4;
+
+    .nav__list {
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     .nav__item {
@@ -34,111 +29,21 @@
         display: inline-block;
         margin-right: $guttering;
         font-weight: 400;
-        @include respond-max($screen-sm) {
-            width: 100%;
-            margin-right: 0;
-            text-align: left;
-            font-weight: 700;
-        }
     }
 
-    .nav__item--active {
-        @include respond-min($screen-sm) {
-            .nav__link, .nav__link:hover {
-                color: $brand-success;
-                &:after {
-                    @include respond-min($screen-sm) {
-                        background-color: $brand-success;
-                    }
-                }
-            }
-        }
-    }
+    .nav__item--active { background-color: darken($brand-primary, 5%); }
 
     .nav__link {
         position: relative;
         display: block;
-        padding: $nav-link-padding;
-        position: relative;
-        top: 2.5px;
-        transition: color .25s ease-in-out, background .25s ease-in-out;
-        &:hover, &:focus {
-            text-decoration: none;
-            border-bottom: 0;
-            &:after {
-                background-color: $brand-primary;
-            }
+        padding: $guttering/2;
+        color: $brand-white;
+        text-decoration: none;
+        &:visited {
+            color: $brand-white;
         }
-        
-        &:after {
-            .header--fixed & {
-                bottom: -.75em;
-                margin-bottom: 2.5px;
-            }
-            @include respond-min($screen-sm) {
-                content: "";
-                height: .25em;
-                width: 100%;
-                bottom: -1.5em;
-                left: 0;
-                position: absolute;
-                background-color: transparent;
-                transition: all .2s ease-in-out;
-                  margin-bottom: 2.5px;
-            }
-
-            @include respond-min($screen-lg) {
-                bottom: -1.5em;
-            }
-
-            @include respond-max($screen-md) {
-                bottom: -.8em;
-            }
-        }
-
-        @include respond-max($screen-sm) {
-            padding: $guttering;
-            margin-bottom: -1px;
-            opacity: 0;
-            font-size: $font-size-h4;
-            color: white;
-            text-shadow: 0px 1px 1px rgba($brand-black, .25);
-            text-align: center;
-            &:hover {
-                color: white;
-                background-color: rgba($brand-black, .15);
-                transition: background .25s ease-in-out;
-            }
-            &:active, &:focus { 
-                border: 0; 
-                border-bottom: 0;
-            }
+        @include on-interaction {
+            color: $brand-white;
         }
     }
-}
-
-.nav--primary-inverse {
-    .nav__link {
-        color: white;
-        &:hover {
-            color: white;
-            &:after {
-                background-color: $brand-white;
-            }
-        }
-    }
-}
-
-.nav--secondary {
-    .nav__item {
-        @include respond-max($screen-sm) {
-            width: 40%;
-        }
-    }
-}
-
-.nav--mobile {
-    display: block;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }

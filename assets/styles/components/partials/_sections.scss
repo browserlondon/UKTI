@@ -8,78 +8,15 @@
 .section {
     width: 100%;
     padding: $guttering*1.6;
-    border-bottom: 1px solid $brand-keyline;
     background-size: cover;
-    @include respond-min($screen-md) {
+    @include media($min-width: $screen-md) {
         padding: $guttering*2;
     }
-    @include respond-min($screen-lg) {
+    @include media($min-width: $screen-lg) {
         padding: $guttering*4;
     }
-    @include respond-max($screen-xs) {
+    @include media($max-width: $screen-xs) {
         padding: $guttering*1.6 $guttering;
-    }
-}
-
-.section--last-child {
-    border-bottom: 0;
-}
-
-.section--overflow {
-    overflow: hidden;
-}
-
-.section--relative { 
-    position: relative;
-}
-
-.section--zero-bottom-mobile {
-    @include respond-max($screen-xs) {
-        padding-bottom: 0;
-    }
-}
-
-.section--bg {
-    background-size: cover;
-    background-position: bottom center;
-    padding: $guttering*2;
-    @include respond-min($screen-sm) {
-        padding-top: $guttering*3.2;
-        padding-bottom: $guttering*3.2;
-    }
-    @include respond-min($screen-lg) {
-        padding-top: $guttering*6;
-        padding-bottom: $guttering*6;
-    }
-}
-
-.section--xs {
-    padding-top: $guttering;
-    padding-bottom: $guttering;
-}
-
-.section--sm {
-    padding-top: $guttering;
-    padding-bottom: $guttering;
-    @include respond-min($screen-md) {
-        padding-top: $guttering*1.4;
-        padding-bottom: $guttering*1.4;
-    }
-}
-
-.section--md {
-    @include respond-min($screen-md) {
-        padding-top: $guttering*2.4;
-        padding-bottom: $guttering*2.4;
-    }
-}
-
-.section--lg {
-    padding-top: $guttering*2;
-    padding-bottom: $guttering*2;
-    @include respond-min($screen-md) {
-        padding-top: $guttering*3.2;
-        padding-bottom: $guttering*3.2;
     }
 }
 
@@ -97,133 +34,8 @@
     background-color: $brand-white;
 }
 
-.section--light-highlight {
-    background-color: $brand-grey-lighter;
-}
-
-.section--dark-highlight {
-    background-color: $brand-secondary;
-    color: $brand-white;
-    // Overlap border
-    margin-top: -1px;
-    margin-bottom: -1px;
-    .text-muted {
-        color: lighten($text-muted, 15%);
-    }
-}
-
 .section__content {
     margin: auto;
-    max-width: 95em;
     display: block;
     @include guttering; 
-}
-
-.section__content--inverse {
-    a {
-        @extend %text-link-inverse;
-    }
-}
-
-.section__content--overlap {
-    @include respond-min($screen-lg) {
-        margin-bottom: -$guttering*6;
-    }
-}
-
-.section__content--anchor {
-    &:before {
-        content: '';
-        display: block;
-        position: relative;
-        width: 0;
-        // Height of fixed header
-        height: 70px;
-        margin-top: -70px;
-    }
-}
-
-
-.section__content--push-down {
-    padding-bottom: $guttering*2.6;
-    @include respond-max($screen-lg) {
-        padding-bottom: $guttering*2;
-    }
-}
-
-.section__content--sm {
-    @include respond-min($screen-sm) {
-        max-width: 35em;
-    }
-}
-
-.section__content--md {
-    @include respond-min($screen-sm) {
-        max-width: 45em;
-    }
-}
-
-.section__content--lg {
-    @include respond-min($screen-sm) {
-        max-width: 65em;
-    }
-}
-
-.section__content--xl {
-    @include respond-min($screen-sm) {
-        max-width: 80em;
-    }
-}
-
-.section__inner {
-    @include respond-min($screen-lg) {
-        padding-bottom: $guttering*2;
-    }
-}
-
-.section__heading {
-    font-size: $font-size-h2;
-    @include respond-min($screen-md) {
-        font-size: $font-size-h1;
-    }
-    @include respond-max($screen-sm) {
-        font-size: $font-size-h3;
-    }
-}
-
-.section__heading--push {
-    margin-bottom: $guttering*2;
-}
-
-.section__col {
-    background-color: $brand-white;
-    padding: $guttering*1.6;
-    @include respond-min($screen-md) {
-        background-color: rgba($brand-white, .9);
-        padding: $guttering*2;
-        width: 50%;
-        float: right;
-    }
-    @include respond-min($screen-lg) {
-        padding: $guttering*4;
-        &:after {
-            content: "";
-            position: absolute;
-            background-color: rgba($brand-white, .9);
-            height: 100%;
-            // Something ridiculous to cover up the right side
-            width: 200%;
-            left: 100%;
-            top: 0;
-        }
-    }
-    @include respond-max($screen-xs) {
-        padding: $guttering*1.6 $guttering*1.2;
-    }
-}
-
-.section__body {
-    margin-top: $guttering*1.2;
-    margin-bottom: $guttering*1.2;
-    @include guttering;
 }

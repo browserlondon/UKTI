@@ -3,14 +3,24 @@
 * Note: N/A
 -------------------------------------------------------------- */
 
-.grid { @extend %site-width-container; }
+.grid, .container { @extend %site-width-container; }
 
 .grid__row {
     @extend %grid-row;
-    .grid__column-third {
-        @include grid-column( 1/3 );
+    .grid__column--third {
+        @include grid-column(1/3);
     }
-    .grid__column-two-thirds {
-        @include grid-column( 2/3 );
+    .grid__column--two-thirds {
+        @include grid-column(2/3);
     }
+    .grid__column--half {
+        @include grid-column(1/2);
+    }
+    .grid__column--three-fourths {
+        @include grid-column(3/4);
+    }
+    .grid__column--one-fourth {
+        @include grid-column(1/4);
+    }
+
 }
