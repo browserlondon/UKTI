@@ -288,9 +288,18 @@ $btn-danger-color: white;
 // Warning: Avoid customizing these values. They're used for a bird's eye view
 // of components dependent on the z-axis and are designed to all work together.
 
+$zindex-dropdown: 4;
+$zindex-popover: 4;
+$zindex-tooltip: 4;
+
+$zindex-back-to-top: 5;
 $zindex-is-fixed: 5;
 
+/* Header
+-------------------------------------------------------------- */
 
+$header-height: 94px;
+$header-height-mobile: 66px;
 
 /* Navs
 -------------------------------------------------------------- */
