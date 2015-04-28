@@ -3,7 +3,10 @@
 * Note: N/A
 -------------------------------------------------------------- */
 
-.grid, .container { @extend %site-width-container; }
+.grid, .container { 
+    @extend %site-width-container; 
+    max-width: 75em;
+}
 
 .grid__row {
     @extend %grid-row;

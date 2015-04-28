@@ -24,11 +24,21 @@
         padding-bottom: 0;
     }
 
+    .nav__list--right {
+        @include media($min-width: $screen-sm) {
+            float: right;
+        }
+    }
+
     .nav__item {
         position: relative;
         display: inline-block;
         font-weight: 400;
-        margin-right: -4px;
+        margin-right: -5px;
+        font-size: $font-size-sm;
+        &:hover {
+            background-color: darken($brand-primary, 2.5%);
+        }
     }
 
     .nav__item--active { background-color: darken($brand-primary, 5%); }

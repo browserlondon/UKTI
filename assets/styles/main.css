@@ -347,6 +347,9 @@ th {
 * Name: Layout
 * Note: N/A
 -------------------------------------------------------------- */
+.grid, .container {
+  max-width: 75em; }
+
 .grid__row .grid__column--third {
   padding: 0 15px;
   -webkit-box-sizing: border-box;
@@ -1081,11 +1084,17 @@ input[type=radio] {
   .nav--primary .nav__list {
     margin-bottom: 0;
     padding-bottom: 0; }
+  @media (min-width: 768px) {
+    .nav--primary .nav__list--right {
+      float: right; } }
   .nav--primary .nav__item {
     position: relative;
     display: inline-block;
     font-weight: 400;
-    margin-right: -4px; }
+    margin-right: -5px;
+    font-size: 1.4rem; }
+    .nav--primary .nav__item:hover {
+      background-color: #bd1c4e; }
   .nav--primary .nav__item--active {
     background-color: #b21b4a; }
   .nav--primary .nav__link {
