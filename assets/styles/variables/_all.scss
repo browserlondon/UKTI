@@ -288,30 +288,9 @@ $btn-danger-color: white;
 // Warning: Avoid customizing these values. They're used for a bird's eye view
 // of components dependent on the z-axis and are designed to all work together.
 
-$zindex-dropdown:            1000;
-$zindex-popover:             1010;
-$zindex-tooltip:             1050;
-$zindex-navbar-fixed:        1030;
-$zindex-nav-primary:         1070;
-$zindex-back-to-top:         1060;
-$zindex-well-advert:         1070;
-$zindex-window-fade:         1000;
-$zindex-window-head:         1010;
-$zindex-header:              1060;
-$zindex-screenshot:          1000;
-$zindex-checklist-source:    1000;
-$zindex-logo:                1060;
-$zindex-burger:              1060;
-$zindex-eclipse:             1050;
-$z-index-hero-overlay:       1010;
-$z-index-hero-content:       1020;
-$z-index-hero-more:          1020;
+$zindex-is-fixed: 5;
 
-/* Header
--------------------------------------------------------------- */
 
-$header-height: 94px;
-$header-height-mobile: 66px;
 
 /* Navs
 -------------------------------------------------------------- */

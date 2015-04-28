@@ -1,10 +1,8 @@
-define('jquery', [], function() {
-    return jQuery;
-});
+define('jquery', [], function() { return jQuery; });
+define('modernizr', [], function() { return Modernizr });
 
 require.config({
     paths: {
-        modernizr: 'libs/modernizr-custom',
         smoothScroll: 'libs/smoothscroll.min',
         fastclick: 'libs/fastclick',
         scrollSpy: 'libs/scrollspy.min',
@@ -13,6 +11,7 @@ require.config({
 
 requirejs(["app/fastclick"]);
 requirejs(["app/back-to-top"]);
+requirejs(["app/fixed-nav"]);
 
 var hasClass = function (elem, className) {
     return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
