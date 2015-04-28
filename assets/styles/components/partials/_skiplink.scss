@@ -5,7 +5,10 @@
 * Notes: N/A
 -------------------------------------------------------------- */
 
-.skiplink { text-align: center; }
+.skiplink { 
+    background-color: $brand-black;
+    text-align: center; 
+}
 
 .skiplink__link {
     position: absolute;
@@ -13,6 +16,8 @@
     @include inline-block;
     margin: 0.75em 0;
     padding: .25em .5em;
+    text-decoration: none;
+    color: black;
 
     &:focus {
         position: static;

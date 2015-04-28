@@ -1070,6 +1070,7 @@ input[type=radio] {
 * Notes: N/A
 -------------------------------------------------------------- */
 .skiplink {
+  background-color: black;
   text-align: center; }
 
 .skiplink__link {
@@ -1078,7 +1079,9 @@ input[type=radio] {
   display: -moz-inline-stack;
   display: inline-block;
   margin: 0.75em 0;
-  padding: .25em .5em; }
+  padding: .25em .5em;
+  text-decoration: none;
+  color: black; }
   .skiplink__link:focus {
     position: static; }
 
@@ -1198,6 +1201,25 @@ input[type=radio] {
   display: block; }
   .section__content > *:last-child, .section__content > *:last-child > *:last-child, .section__content > *:last-child > *:last-child > *:last-child {
     margin-bottom: 0; }
+
+/*
+* Name: Logo
+* Use: For displaying Twine logo
+* Modifiers: Logo size
+* Notes: N/A
+-------------------------------------------------------------- */
+.logo {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left; }
+  .logo:hover, .logo:focus {
+    border-bottom: 0;
+    text-decoration: none; }
+
+.logo__img {
+  display: inline-block;
+  vertical-align: middle; }
 
 /*
 * Name:
