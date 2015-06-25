@@ -31,7 +31,10 @@
     width: 1%;
     white-space: nowrap;
     vertical-align: middle;
-    .btn { padding: 10px 8px 6px 8px; }
+    .btn { 
+        padding: 10px 8px 6px 8px; 
+        box-shadow: none;
+    }
 }
 
 // Text input groups

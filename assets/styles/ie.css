@@ -478,6 +478,12 @@ hr,
   max-width: 85em;
   min-width: 1000px; }
 
+.grid--zero-pad {
+  margin-left: 0;
+  margin-right: 0; }
+
+.grid__row > *:last-child, .grid__row > *:last-child > *:last-child, .grid__row > *:last-child > *:last-child > *:last-child {
+  margin-bottom: 0; }
 .grid__row .grid__column--third {
   padding: 0 15px;
   -webkit-box-sizing: border-box;
@@ -595,6 +601,7 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 pre, p, ul, ol, li, dl, dd, form, table, blockquote, figure, figcaption {
+  margin-top: 0;
   font-weight: normal;
   font-size: 100%; }
 
@@ -678,16 +685,7 @@ strong {
 
 small,
 .small {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5625;
-  font-weight: 400;
-  text-transform: none; }
-  @media (max-width: 640px) {
-    small,
-    .small {
-      font-size: 14px;
-      line-height: 1.42857; } }
+  font-size: 90%; }
 
 abbr[title] {
   cursor: help; }
@@ -845,7 +843,7 @@ select {
 select {
   cursor: pointer; }
 
-label {
+label, legend {
   display: block;
   font-weight: bold;
   cursor: pointer;
@@ -854,10 +852,6 @@ label {
 textarea {
   resize: vertical;
   min-height: 150px; }
-
-legend {
-  font-weight: bold;
-  padding: 1.2rem; }
 
 fieldset {
   border: none;
@@ -911,7 +905,8 @@ input[type=radio] {
 
 .checkbox {
   position: relative;
-  padding-left: 1.25em; }
+  padding-left: 1.5em;
+  margin-bottom: 0.8rem; }
   .checkbox label {
     padding-bottom: 0;
     font-weight: normal; }
@@ -920,6 +915,9 @@ input[type=radio] {
     left: 0;
     top: 50%;
     margin-top: -0.5em; }
+
+.required {
+  color: #df3034; }
 
 /*
 * Name: Buttons
@@ -982,7 +980,7 @@ input[type=radio] {
     margin-right: 0; }
 
 .btn--success {
-  background-color: #0bbe7e;
+  background-color: #229068;
   position: relative;
   display: -moz-inline-stack;
   display: inline-block;
@@ -990,8 +988,8 @@ input[type=radio] {
   border: none;
   border-radius: 0;
   -webkit-appearance: none;
-  -webkit-box-shadow: 0 2px 0 #07764e;
-  box-shadow: 0 2px 0 #07764e;
+  -webkit-box-shadow: 0 2px 0 #13523b;
+  box-shadow: 0 2px 0 #13523b;
   font-size: 1em;
   line-height: 1.25;
   text-decoration: none;
@@ -999,24 +997,24 @@ input[type=radio] {
   cursor: pointer;
   color: #fff; }
   .btn--success:visited {
-    background-color: #0bbe7e; }
+    background-color: #229068; }
   .btn--success:hover, .btn--success:focus {
-    background-color: #0aa66e; }
+    background-color: #1d7b59; }
   .btn--success:active {
     top: 2px;
-    -webkit-box-shadow: 0 0 0 #0bbe7e;
-    box-shadow: 0 0 0 #0bbe7e; }
+    -webkit-box-shadow: 0 0 0 #229068;
+    box-shadow: 0 0 0 #229068; }
   .btn--success.disabled, .btn--success[disabled="disabled"], .btn--success[disabled] {
     zoom: 1;
     filter: alpha(opacity=50);
     opacity: 0.5; }
     .btn--success.disabled:hover, .btn--success[disabled="disabled"]:hover, .btn--success[disabled]:hover {
       cursor: default;
-      background-color: #0bbe7e; }
+      background-color: #229068; }
     .btn--success.disabled:active, .btn--success[disabled="disabled"]:active, .btn--success[disabled]:active {
       top: 0;
-      -webkit-box-shadow: 0 2px 0 #07764e;
-      box-shadow: 0 2px 0 #07764e; }
+      -webkit-box-shadow: 0 2px 0 #13523b;
+      box-shadow: 0 2px 0 #13523b; }
   .btn--success:link, .btn--success:hover, .btn--success:focus, .btn--success:visited {
     color: #fff; }
   .btn--success:before {
@@ -1451,7 +1449,9 @@ input[type=radio] {
   vertical-align: middle; }
   .input-group-addon .btn,
   .input-group-btn .btn {
-    padding: 10px 8px 6px 8px; }
+    padding: 10px 8px 6px 8px;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
 
 .input-group-addon {
   padding: 0.5em 0.75em;
@@ -1511,6 +1511,41 @@ input[type=radio] {
   margin-left: 1em;
   min-width: inherit; }
 
+/* 
+* Name: Alert
+* Use: Contextual feedback messages for typical user actions
+* Modifiers: Various colour options to indicatate different states
+* Notes: See http://getbootstrap.com/javascript/#alerts / http://getbootstrap.com/components/#alerts
+-------------------------------------------------------------- */
+.alert {
+  background-color: white;
+  display: inline-block;
+  width: auto;
+  font-weight: 500;
+  position: relative;
+  border-bottom: 1px solid #EAEAEA;
+  -webkit-transition: height .25s ease-in-out;
+  transition: height .25s ease-in-out;
+  padding: .75em 1em;
+  margin-bottom: 2.4rem; }
+  .alert > *:last-child, .alert > *:last-child > *:last-child, .alert > *:last-child > *:last-child > *:last-child {
+    margin-bottom: 0; }
+
+.alert--success {
+  background-color: #229068;
+  border-bottom-color: #1d7b59;
+  color: white; }
+
+.alert--warning {
+  background-color: #f47738;
+  border-bottom-color: #f36620;
+  color: white; }
+
+.alert--danger {
+  background-color: #df3034;
+  border-bottom-color: #d52125;
+  color: white; }
+
 /*
 * Pattern name: Page
 * Use: Content handling
@@ -1550,6 +1585,14 @@ input[type=radio] {
 .section--bordered {
   border-top: 10px solid #c81e53; }
 
+.section--keyline {
+  border: 1px solid #EAEAEA; }
+
+.section--blocked {
+  margin-bottom: 2.4rem; }
+  .section--blocked:last-child {
+    margin-bottom: 0; }
+
 .section__content {
   margin: auto;
   display: block; }
@@ -1586,10 +1629,7 @@ input[type=radio] {
   visibility: visible;
   opacity: 1;
   -webkit-transition: visibility 0.25s ease-in-out, opacity .25s ease-in-out;
-  transition: visibility 0.25s ease-in-out, opacity .25s ease-in-out;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0); }
+  transition: visibility 0.25s ease-in-out, opacity .25s ease-in-out; }
 
 .back-to-top__inner {
   background-color: #c81e53;
@@ -1660,7 +1700,7 @@ input[type=radio] {
  * Copyright © 2014 David Bushell | BSD & MIT license | http://dbushell.com/
  */
 .pika-single {
-  z-index: 9999;
+  z-index: 4;
   display: block;
   position: relative;
   color: #333;
@@ -1701,7 +1741,7 @@ http://nicolasgallagher.com/micro-clearfix-hack/
   display: inline-block;
   *display: inline;
   position: relative;
-  z-index: 9999;
+  z-index: 4;
   overflow: hidden;
   margin: 0;
   padding: 5px 3px;
@@ -2035,7 +2075,7 @@ strong, .strong {
   color: #7C7E81; }
 
 .text-success {
-  color: #0bbe7e; }
+  color: #229068; }
 
 .text-warning {
   color: #f57f32; }

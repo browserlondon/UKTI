@@ -75,6 +75,7 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 pre, p, ul, ol, li, dl, dd, form, table, blockquote, figure, figcaption {
+    margin-top: 0;
     font-weight: normal;
     font-size: 100%;
 }
@@ -139,7 +140,7 @@ strong {
 
 small,
 .small {
-    @include core-16($line-height: (25 / 16), $line-height-640: (20 / 14));
+    font-size: 90%;
 }
 
 abbr[title] {
