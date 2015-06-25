@@ -25,7 +25,7 @@ set :update_vendors, false
 # Multistage for
 set :stages,        %w(staging)
 set :default_stage, "staging"
-set :stage_dir,     app_path + "/config/deploy"
+set :stage_dir,     "config/deploy"
 require "capistrano/ext/multistage"
 
 # Clean releases
