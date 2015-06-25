@@ -1,0 +1,15 @@
+.DS_Store*
+thumbs.db
+Icon?
+Thumbs.db
+.sass-cache/
+.sass-cache/*
+node_modules/
+.*.swp
+vhost.conf
+web/sitemap.xml
+web/sitemap.xml.gz
+/.idea/
+/.idea/*
+/.idea
+/config/deploy/*

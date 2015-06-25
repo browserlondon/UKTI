@@ -1,0 +1,14 @@
+/*
+* Name:
+* Use:
+* Modifiers:
+* Notes:
+-------------------------------------------------------------- */
+
+.hero { @include guttering; }
+
+.hero__title {
+    @include core-48;
+    padding-bottom: 0;
+    font-weight: bold;
+}

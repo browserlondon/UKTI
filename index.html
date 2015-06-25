@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UKTI</title>
+    <link rel="stylesheet" href="assets/styles/main.min.css">
+</head>
+<body>
+    <div class="skiplink">
+        <a href="#content" class="skiplink__link">Skip to main content</a>
+    </div>
+
+    <header id="global-header" class="masthead" role="banner">
+        <div class="grid">
+            <div class="grid__row grid__row--vertical-align">
+                <div class="grid__column grid__column--half">
+                    <div class="masthead__area">
+                        <a href="" class="logo">
+                            <img src="/assets/images/ukti-logo.png" alt="" class="logo__img">
+                        </a>
+                    </div>
+                </div>
+                <div class="grid__column grid__column--half">
+                    <div href="" class="masthead__area masthead__area--align">
+                        <div class="masthead__subtext">
+                            CDMS Online
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="nav nav--primary nav--fixed" role="navigation">
+        <div class="grid">
+            <div class="grid__row">
+                <div class="grid__column grid__column--two-thirds">
+                    <ul class="nav__list list-unstyled">
+                        <li class="nav__item nav__item--active">
+                            <a href="" class="nav__link">Opportunities</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="" class="nav__link">Organisations</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="" class="nav__link">Proposals</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="" class="nav__link">Reports</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="" class="nav__link">Help</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid__column grid__column--one-third">
+                    <ul class="nav__list nav__list--right">
+                        <li class="nav__item">
+                            <a href="" class="nav__link">josh.johnson@browserlondon.com</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="" class="nav__link">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="section section--subtle-highlight">
+        <div class="container">
+            <div class="hero">
+                <h1 class="hero__title">Organisations</h1>
+            </div>
+        </div>
+    </div>
+    <main id="content" class="section section--plain">
+        <div class="container">
+            <div class="section__content">
+                <form action="#" class="ll">
+                    <fieldset>
+                        <label for="text">Text Input <abbr title="Required">*</abbr></label>
+                        <input id="text" class="text" type="text">
+                        <em>Note about this field</em>
+                    </fieldset>
+                    <fieldset>
+                        <label for="password">Password</label>
+                        <input id="password" class="text" type="password">
+                        <em>Note about this field</em>
+                    </fieldset>
+                    <fieldset>
+                        <label for="url">Web Address</label>
+                        <input id="url" class="text" type="url">
+                        <em>Note about this field</em>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Email Address</label>
+                        <input id="email" class="text" type="email">
+                        <em>Note about this field</em>
+                    </fieldset>
+                    <fieldset>
+                        <label for="main__search">Search</label>
+                        <div class="field-and-button">
+                            <div class="field-and-button__item">
+                                <input type="search" placeholder="Search website" id="main__search" name="query" value="">
+                            </div>
+                            <div class="field-and-button__item">
+                                <button type="submit" class="btn">Search</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <label for="textarea">Textarea</label>
+                        <textarea id="textarea" rows="8" cols="48"></textarea>
+                        <em class="clear">Note about this field</em>
+                    </fieldset>
+                    <fieldset>
+                        <label for="checkbox">Single Checkbox</label>
+                        <div class="checkbox">
+                            <label for="checkbox">Label</label>
+                            <input id="checkbox" type="checkbox" class="checkbox">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <label for="select">Select</label>
+                        <select id="select">
+                            <optgroup label="Option Group">
+                                <option>Option One</option>
+                                <option>Option Two</option>
+                                <option>Option Three</option>
+                            </optgroup>
+                        </select>
+                        <em>Note about this selection</em>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Checkbox <abbr title="Required">*</abbr></legend>
+                        <ul class="list-unstyled">
+                            <li class="checkbox">
+                                <label for="checkbox1">Choice A</label>
+                                <input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
+                            </li>
+                            <li class="checkbox">
+                                <label for="checkbox2">Choice B</label>
+                                <input id="checkbox2" name="checkbox" type="checkbox">
+                            </li>
+                            <li class="checkbox">
+                                <label for="checkbox3">Choice C</label>
+                                <input id="checkbox3" name="checkbox" type="checkbox">
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Radio</legend>
+                        <ul class="list-unstyled">
+                            <li class="checkbox">
+                                <label for="radio1">Option 1</label>
+                                <input id="radio1" name="radio" type="radio" class="radio" checked="checked">
+                            </li>
+                            <li class="checkbox">
+                                <label for="radio2">Option 2</label>
+                                <input id="radio2" name="radio" type="radio" class="radio">
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <div class="submit">
+                        <input class="btn btn--success" type="submit" value="Post Comment">
+                        <input class="btn btn--primary" type="button" value="Preview">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" class="section section--sm section--subtle-highlight section--bordered" role="contentinfo">
+        <div class="container">
+            <p class="zero-bottom"><strong>© Crown Copyright.</strong> All rights reserved. All trademarks acknowledged.</p>
+            <p>Contact us: 020 7215 5000</p>
+        </div>
+    </footer>
+
+    <div class="back-to-top back-to-top--static" aria-hidden="true">
+        <a href="#top" class="circle circle--responsive circle--link" data-scroll>
+            <div class="circle__inner">
+                Back to top
+            </div>
+        </a>
+    </div>
+    <script src="/assets/scripts/compiled/libs/modernizr-custom.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/assets/scripts/compiled/libs/require.min.js" data-main="/assets/scripts/compiled/main"></script>
+</body>
+</html>

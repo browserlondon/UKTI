@@ -1,0 +1,206 @@
+/*
+* Name: Data table
+* Use:
+* Modifiers:
+* Notes:
+-------------------------------------------------------------- */
+
+.data-table {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.data-table--fixed { table-layout: fixed; }
+
+.data-table--responsive {
+    @include respond-max($screen-sm) {
+        display: block;
+
+        .data-table__head, .data-table__row { display: inline-block; }
+
+        .data-table__col { float: left; }
+    }
+}
+
+.data-table--offset {
+    // Offset row borders (slight overlap when using border-collapse property)
+    @include respond-min-max($screen-sm, $screen-lg) { margin-left: 1px; }
+}
+
+.data-table__head {
+    display: table-row;
+    width: 100%;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    padding-left: .25em;
+    vertical-align: top;
+    border-left: 0;
+    border-bottom: 1px solid;
+    border-bottom-color: $brand-keyline;
+    @include respond-max($screen-sm) { padding-left: .5em; }
+
+    + .data-table__row {
+        &:after {
+            content: none;
+        }
+    }
+}
+
+.data-table__row {
+    display: table-row;
+    width: 100%;
+    vertical-align: top;
+    user-select: none;
+    border-left: .25em solid $brand-grey-lighter;
+    transition: border 0.25s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    border-bottom: 1px solid;
+    border-bottom-color: $brand-keyline;
+    color: $brand-text;
+    &:last-child {
+        border-bottom: 0;
+    }
+
+    @include on-interaction {
+        text-decoration: none;
+        border-bottom-color: $brand-keyline;
+        transition: border 0.25s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+        border-left-color:  $brand-primary;
+        background-color: $table-bg-hover;
+        color: $brand-text;
+
+        .data-table__icon {
+            opacity: 1;
+            transition: color 0.1s ease-in-out, opacity 0.15s ease-in-out;
+            color: $brand-primary;
+        }
+    }
+
+    @include respond-max($screen-sm) { border-left-width: .5em; }
+}
+
+
+.data-table__row--zero-border {
+    &:after {
+        display: none;
+    }
+}
+
+// Contextual modifiers
+.data-table__row--active {
+    background-color: $table-bg-hover;
+}
+
+.data-table__row--primary {
+    border-left-color:  $brand-primary;
+    @include on-interaction {
+        border-left-color: $brand-primary;
+        .data-table__icon {
+            color: $brand-primary;
+        }
+    }
+}
+
+.data-table__row--success {
+    border-left-color:  $brand-success;
+    @include on-interaction {
+        border-left-color: $brand-success;
+        .data-table__icon {
+            color: $brand-success;
+        }
+    }
+}
+
+.data-table__row--danger {
+    border-left-color:  $brand-danger;
+    @include on-interaction {
+        border-left-color: $brand-danger;
+        .data-table__icon { color: $brand-danger; }
+    }
+}
+
+.data-table__row--warning {
+    border-left-color:  $brand-warning;
+    @include on-interaction {
+        border-left-color: $brand-warning;
+        .data-table__icon { color: $brand-warning; }
+    }
+}
+
+.data-table__col {
+    word-wrap: break-word;
+    vertical-align: middle;
+    display: table-cell;
+    float: none !important;
+    padding: $guttering / 1.75 $guttering / 1.25;
+    &:focus {
+        outline: 0;
+    }
+    @include respond-max($screen-sm) {
+        padding-left: $guttering / 2;
+        padding-right: $guttering / 2;
+    }
+}
+
+.data-table__col--align {
+    @include respond-max($screen-sm-min) { padding-top: 0; }
+}
+
+.data-table__col--offset-icon {
+    padding-left: 3.25em;
+    .icon {
+        margin-left: -2em;
+        margin-right: 1em;
+        &:before { width: auto; }
+    }
+}
+
+.data-table__entry {
+    position: relative;
+    // @include guttering;
+}
+
+.data-table__figure {
+    line-height: 1;
+}
+
+.data-table__subject {
+    display: inline;
+    margin-bottom: $guttering / 5;
+    margin-right: .5em;
+}
+
+.data-table__labels {
+    display: inline;
+    @include respond-max($screen-sm) {
+        margin-top: .25em;
+        display: block;
+    }
+}
+
+.data-table__currency {
+    margin-right: $guttering / 6;
+}
+
+.data-table__upload {
+    float: left;
+    width: auto;
+    margin-right: 1em;
+    @include respond-max($screen-sm) {
+        float: right;
+        margin: 0;
+        width: 40px;
+        padding: 2px;
+        margin-left: 1em;
+        margin-right: 0;
+    }
+}
+
+.data-table__icon {
+    width: 1em;
+    font-size: 1.75em;
+    float: left;
+    opacity: .25;
+    margin-right: .5em;
+    transition: color 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}

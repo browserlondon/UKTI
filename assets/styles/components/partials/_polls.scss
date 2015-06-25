@@ -1,0 +1,117 @@
+/*
+* Name: Poll
+* Use: Open/closed poll styling
+* Modifiers: Result bar colouring
+* Note: N/A
+-------------------------------------------------------------- */
+
+.poll {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+.poll__label {
+    font-size: $font-size-sm;
+    line-height: 1.25em;
+}
+
+.poll__list {
+    @include unset-list;
+    margin-bottom: 0;
+}
+
+.poll__list--voted { margin-bottom: 1em; }
+
+.poll__item--nth-1 .poll__result { background-color: $brand-red; }
+
+.poll__item--nth-2 .poll__result { background-color: $brand-orange; }
+
+.poll__item--nth-3 .poll__result { background-color: $brand-turquoise; }
+
+.poll__item--nth-4 .poll__result { background-color: $brand-green; }
+
+.poll__item--nth-5 .poll__result { background-color: $brand-purple; }
+
+.poll__item {
+    overflow: hidden;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.poll__item--voted { padding: .25em 1.6rem; }
+
+.poll__item--not-voted {
+    margin-bottom: 0;
+    background-color: lighten($brand-grey-lighter, 2.5%);
+    border-top: 1px solid;
+    border-top-color: $brand-keyline;
+    @include guttering;
+    .poll__option {
+        padding: .8rem 1.6rem;
+        transition: transform 0.25s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+        @include on-interaction {
+            transform: translateX(0.5em);
+            transition: transform 0.25s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+        }
+    }
+}
+
+.poll__footer { display: none; }
+
+.poll__option {
+    display: block;
+    margin-bottom: $guttering / 2;
+    font-size: .95em;
+}
+
+.poll__vote-number { font-weight: 700; }
+
+.poll__result-count {
+    margin-bottom: 0;
+    font-size: $font-size-sm;
+    @include respond-min($screen-lg) {
+        float: right;
+    }
+
+    @include respond-max($screen-md) {
+        float: right;
+    }
+}
+
+.poll__title {
+    margin-right: .5em;
+    @include respond-min($screen-lg) {
+        float: left;
+    }
+
+    @include respond-max($screen-md) {
+        float: left;
+    }
+}
+
+.poll__result-container {
+    width: 100%;
+    margin-bottom: $guttering / 2;
+    height: .5em;
+    border-radius: .5em;
+    overflow: hidden;
+    background-color: $brand-keyline;
+}
+
+.poll__result {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: progress-bar 2s;
+    animation-timing-function: ease-in-out;
+    border-radius: .5em;
+}
+
+.poll__vertical-space {
+    height: 1em;
+    display: none;
+}

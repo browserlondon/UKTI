@@ -1,0 +1,74 @@
+/*
+* Name: Well
+* Use: Isolating content into its own block
+* Modifiers: Reduced marging/padding options
+* Notes: N/A
+-------------------------------------------------------------- */
+
+.well {
+    min-height: 20px;
+    padding: 1.5em;
+    margin-bottom: $guttering;
+    background-color: $well-bg;
+    border: 1px solid $well-border;
+    border-radius: $border-radius-lg;
+    display: block;
+    transition: border .15s ease-in-out, background .15s ease-in-out;
+    @include guttering;
+}
+
+
+.well--sm { max-width: 30em; }
+
+.well--invisible {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.well--transparent {
+    border: 2px solid $brand-white;
+    background-color: transparent;
+}
+
+.well--active { background-color: $brand-white; }
+
+.well--overlay { 
+    margin-bottom: $guttering*2; 
+    @include respond-min($screen-lg) {
+        margin-bottom: $guttering*4;       
+    }
+}
+
+.well--fixed {
+    position: fixed;
+    padding: $guttering;
+    margin-bottom: $guttering/1.5;
+    margin-right: $guttering/1.5;
+    bottom: 0;
+    right: 0;
+    z-index: $zindex-well-advert;
+    @include respond-max($screen-lg) {
+        display: none;
+    }
+}
+
+.well--link {
+    @include on-interaction {
+        border: 1px solid $well-border;
+        background-color: $brand-white;
+        color: $brand-text;
+        text-decoration: none;
+        transition: border .15s ease-in-out, background .15s ease-in-out;
+    }
+}
+
+.well__inner {
+    border-top: 1px solid $brand-keyline;
+    padding: $guttering;
+    @include respond-min($screen-sm) {
+        padding: $guttering*1.5 $guttering*1.75;
+    }
+    &:first-child {
+        border-top: 0;
+    }
+}

@@ -1,0 +1,260 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+.disabled, .is-disabled, fieldset[disabled]{ cursor: not-allowed; }
+
+.no-decoration {
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.kill-scroll { 
+    height: 100%;
+    overflow: hidden; 
+}
+
+.guttering { @include guttering; }
+
+// Floats
+
+.clearfix { @include clearfix; }
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Only display content to screen readers
+
+.sr-only, %sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.invisible { visibility: hidden; }
+
+.text-hide { @include text-hide; }
+
+.text-no-wrap { white-space: nowrap; }
+
+.text-interaction:hover { cursor: pointer; }
+
+.text-responsive-lg {
+    @include media($max-width: $screen-lg) {
+        font-size: $font-size-sm;
+    }
+}
+
+.text-responsive-md {
+    @include media($max-width: $screen-md) {
+        font-size: $font-size-sm;
+    }
+}
+
+
+.text-lead { 
+    font-size: $font-size-lead;
+    @include media($max-width: $screen-lg) {
+        font-size: $font-size-h1;
+    }
+    @include media($max-width: $screen-sm) {
+        font-size: $font-size-h3;
+    }
+}
+
+.text-sub { 
+    font-size: $font-size-h4;
+    @include media($max-width: $screen-sm) {
+        font-size: $font-size-h6;
+    }
+}
+
+.text-serif {
+    font-family: $font-family-serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+strong, .strong { font-weight: bold; }
+
+.text-link, %text-link {
+    color: $brand-link;
+    @include on-interaction {
+        color: darken($brand-link, 5%);
+    }
+}
+
+.text-link-inverse, %text-link-inverse {
+    color: $brand-white;
+    font-weight: bold;
+    border-bottom: 1px solid $brand-white;
+    @include on-interaction {
+        border-bottom-color: $brand-white;
+        color: $brand-white;
+    }
+}
+
+.text-primary, %text-primary {
+    color: $brand-primary;
+    a & {
+        @include on-interaction {
+            color: darken($brand-primary, 5%);
+        }
+    }
+}
+
+// Contextual colors
+.text-inverse {
+    color: $brand-text-inverse;
+    // Links
+    a {
+        color: $brand-link-inverse;
+        &:hover,
+        &:focus {
+            color: $brand-link-inverse;
+        }
+    }
+}
+
+.text-left { text-align: left; }
+.text-left-md {
+    @include media($max-width: $screen-md) {
+        text-align: left;
+    }
+}
+
+.text-right { text-align: right; }
+
+.text-center { text-align: center; }
+
+.text-justify { text-align: justify; }
+
+.text-capitalise { text-transform: capitalize; }
+
+.text-lowercase { text-transform: lowercase; }
+
+// Contextual colors
+.text-muted { color: $text-muted; }
+
+.text-default { color: $brand-text; }
+
+.text-secondary { color: $brand-text-secondary; }
+
+.text-success { color: $brand-success; }
+
+.text-warning { color: $brand-warning; }
+
+.text-danger { color: $brand-danger; }
+
+.text-subtitle {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.no-select { user-select: none; }
+
+// Hide from screenreaders and browsers
+
+.hide, %hide { display: none !important; }
+
+.show { display: block !important; }
+
+.hidden, %hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.hidden-js {
+    .js & {
+        display: none !important;
+    }
+}
+
+// IE specific
+.visible-ie {
+    display: none;
+    .lt-ie9 & {
+        display: block !important;
+    }
+}
+
+.hidden-ie  {
+    .lt-ie9 & {
+        display: none !important;
+    }
+}
+
+// Show if svg is supported
+.visible-svg {
+    .no-svg & {
+        display: none !important;
+    }
+}
+
+// Hide if svg is supported
+.hidden-svg {
+    .svg & {
+        display: none !important;
+    }
+}
+
+// Float spacing
+
+.pull-right { float: right !important; }
+
+.pull-left { float: left !important; }
+
+// Add spacing
+
+.push { margin: $guttering !important; }
+
+.push-left { margin-left: $guttering !important; }
+
+.push-right { margin-right: $guttering !important; }
+
+.push-bottom { margin-bottom: $guttering !important; }
+
+.push-top { margin-top: $guttering !important; }
+
+
+.nudge { margin: $guttering/3 !important; }
+
+.nudge-left { margin-left: $guttering/3 !important; }
+
+.nudge-right { margin-right: $guttering/3 !important; }
+
+.nudge-bottom { margin-bottom: $guttering/3 !important; }
+
+.nudge-top { margin-top: $guttering/3 !important; }
+
+// Remove spacing
+
+.zero { margin: 0 !important; }
+
+.zero-top { margin-top: 0 !important; }
+
+.zero-bottom { margin-bottom: 0 !important; }
+
+.zero-left { margin-left: 0 !important; }
+
+.zero-right {  margin-right: 0 !important; }
+
+.zero-pad { padding: 0 !important; }
+
+.zero-pad-bottom { padding-bottom: 0 !important; }
+
+.zero-pad-top { padding-top: 0 !important; }
+
+.zero-pad-left { padding-left: 0 !important; }
+
+.zero-pad-right { padding-right: 0 !important; }

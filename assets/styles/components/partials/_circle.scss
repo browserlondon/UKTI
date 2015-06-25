@@ -1,0 +1,185 @@
+/*
+* Name: Circle
+* Use:
+* Modifiers:
+* Notes:
+-------------------------------------------------------------- */
+
+.circle {
+    display: inline-block;
+    border-radius: 10em;
+    padding: 0;
+    transition: border .25s ease-out;
+    vertical-align: middle;
+    margin-right: .25em;
+    background-color: white;
+    border: 2px solid;
+    border-color: $brand-keyline;
+    overflow: hidden;
+}
+
+.circle--transparent {
+    background-color: transparent;
+    .circle__inner {
+        background-color: transparent;
+        color: white;
+    }
+}
+
+.circle--sm {
+    .circle__inner {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+.circle--lg {
+    .circle__inner {
+        width: 75px;
+        height: 75px;
+        line-height: 75px;
+    }
+}
+
+.circle--link {
+    @include on-interaction {
+        border-color: $brand-primary;
+        color: $brand-primary;
+        text-decoration: none;
+        transition: border .25s ease-out;
+        border-width: 2px;
+    }
+}
+
+.circle--disabled {
+    color: $brand-keyline;
+    border-color: $brand-keyline;
+}
+
+.circle--responsive {
+    @include respond-max($screen-sm) {
+        .circle__inner {
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+        }
+    }
+}
+
+.circle--bubble {
+    border-color: $brand-keyline;
+    width: 8em;
+    height: 8em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: $guttering;
+    
+    @include respond-max($screen-lg) {
+        width: 6em;
+        height: 6em;
+        padding: 0;
+    }
+
+    @include respond-max($screen-md) {
+        width: 4em;
+        height: 4em;
+        padding: 0;
+    }
+
+    @include respond-max($screen-xs) {
+        width: 3em;
+        height: 3em;
+        margin-bottom: $guttering/2;
+    }
+}
+
+.circle--bubble-inverse {
+    border-color: $brand-white;
+}
+
+.circle--bubble-responsive {
+    @include respond-min-max($screen-sm, $screen-md) {
+        width: 2em;
+        height: 2em;
+        position: absolute;
+        right: 1.5em;
+        top: -.5em;
+        .circle__icon {
+            font-size: .75em;
+        }
+    }
+    @include respond-max($screen-sm) {
+        float: left;
+        margin-right: $guttering;
+    }
+}
+
+.circle__icon {
+    @include vertical-align;
+    position: relative;
+    display: block;
+    @include respond-min($screen-sm) {
+        &:before {
+            top: 1px;
+            position: relative;
+        }
+    }
+    @include respond-min($screen-md) {
+        font-size: 2em;
+        &:before {
+            top: 2.5px;
+            position: relative;
+        }
+    }
+    @include respond-min($screen-lg) {
+        font-size: 2.6em;
+    }
+}
+
+
+.circle__inner {
+    display: block;
+    padding: 0;
+    background-color: #fff;
+    transition: background,.25s;
+    border-radius: 10em;
+    margin-bottom: 0;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    top: 2.5px;
+    position: relative;
+}
+
+.circle__inner--sm {
+    font-size: $font-size-base;
+    @include respond-max($screen-sm) {
+        font-size: $font-size-sm;
+    }
+}
+
+// Contextual modifiers
+.circle--success {
+    border-color: $brand-success;
+    color: $brand-success;
+}
+
+.circle--warning {
+    border-color: $brand-warning;
+    color: $brand-warning;
+}
+
+.circle--danger {
+    border-color: $brand-danger;
+    color: $brand-danger;
+}
+
+.circle--active {
+    border-color: $brand-primary;
+    color: $brand-primary ;
+}

@@ -1,0 +1,20 @@
+/*
+* Name: Buttons
+* Note: N/A
+-------------------------------------------------------------- */
+
+.btn {
+    @include button($brand-primary);
+}
+
+.btn--success {
+    @include button($brand-success);
+}
+
+.btn--danger {
+    @include button($brand-warning);
+}
+
+.btn--warning {
+    @include button($brand-warning);
+}

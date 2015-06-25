@@ -1,0 +1,31 @@
+/*
+* Mixin name: Button variants
+* Use: Easily pump out default styles, as well as :hover, :focus, :active, and disabled options for all buttons
+* Notes: N/A
+-------------------------------------------------------------- */
+
+@mixin button-variant($color, $background, $border) {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+    transition: background .25s, color .25s, border .25s;
+
+    &:hover, &:visited, &:active, &:focus {
+        border-color: $border;
+        color: $color;
+    }
+
+    @if $border != white {
+        &:hover {
+            border-color: darken($border, 7.5%);
+            transition: background .25s, color .25s, border .25s;
+        }
+    }
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $line-height, $border-radius) {
+    padding: $padding-vertical $padding-horizontal $padding-vertical/2;
+    line-height: $line-height;
+    border-radius: $border-radius;
+}

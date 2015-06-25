@@ -1,0 +1,443 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/* Branding
+-------------------------------------------------------------- */
+
+$brand-grey-dark: #3d3d3d;
+$brand-grey: #4e4e4e;
+$brand-grey-mid: #8e8e8e;
+$brand-grey-light: #f3f3f3;
+$brand-grey-lighter: #fafafa;
+
+$brand-white: white;
+$brand-black: black;
+
+$brand-keyline: #EAEAEA;
+
+$brand-group-border: #cccccc;
+$brand-disabled: #dddddd;
+$brand-text-inverse: white;
+$brand-link-inverse: white;
+$brand-subtle-highlight: #fff9e9;
+
+$brand-red: #F54008;
+$brand-orange: #f57f32;
+$brand-green: #0bbe7e;
+$brand-pink: #c81e53;
+
+$brand-primary: $brand-pink;
+
+$brand-danger: $brand-red;
+$brand-warning: $brand-orange;
+$brand-success: $brand-green;
+
+$brand-text: #50595c;
+$brand-text-secondary: #7C7E81;
+$brand-body-bg: $brand-white;
+$brand-main-bg: #f5f5f5;
+
+$brand-link: $brand-primary;
+
+$brand-nav-link: #FFFFFF;
+$brand-nav-link-hover: #FFFFFF;
+
+/* Text colouring
+-------------------------------------------------------------- */
+
+//** Text muted color
+$text-muted: #989da2;
+
+//** Abbreviations and acronyms border color
+$abbr-border-color: $brand-grey-light;
+
+//** Blockquote small color
+$blockquote-small-color: $brand-grey-light;
+
+//** Blockquote border color
+$blockquote-border-color: $brand-grey-lighter;
+
+//** Global text color on `<body>`.
+$brand-text: $brand-grey-dark;
+
+/* Typography
+-------------------------------------------------------------- */
+
+$font-family-sans-serif: "soleil", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$guttering: 2.4rem;
+
+$font-size-base: 1.8rem; // 16px
+
+$font-size-lead: 3.8rem;
+
+$font-size-xxl: 3rem; // 22px
+$font-size-xl: 2.4rem; // 22px
+$font-size-lg: 1.8rem; // 18px
+$font-size-sm: 1.4rem; // 14px
+$font-size-xs: 1.2rem; // 12px
+$font-size-xxs: 1rem;
+
+$font-size-h1: 3.6rem; // 36px
+$font-size-h2: 2.8rem; // 30px
+$font-size-h3: 2.4rem; // 24px
+$font-size-h4: 2rem; // 20px
+$font-size-h5: 1.8rem; // 18px
+$font-size-h6: $font-size-base; // 16px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-lg: 2;
+$line-height-base: 1.6;
+$line-height-sm: 1.4;
+$line-height-xs: 1.2;
+
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed: floor($font-size-base * $line-height-base) !default;
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family: inherit !default;
+$headings-font-weight: 500;
+$headings-line-height: 1.4;
+$headings-color: inherit !default;
+
+
+/* Component spacing
+-------------------------------------------------------------- */
+
+$padding-vertical-base: 0.5em;
+$padding-horizontal-base: 0.75em;
+
+$padding-vertical-lg: 10px !default;
+$padding-horizontal-lg: 20px;
+
+$padding-vertical-sm: 5px;
+$padding-horizontal-sm: 15px;
+
+$padding-vertical-xs: 1px !default;
+$padding-horizontal-xs: 10px;
+
+$line-height-lg: 1.33 !default;
+$line-height-sm: $line-height-base;
+
+$border-radius-base: 0.25em;
+$border-radius-lg: 0.5em;
+$border-radius-sm: 0.125em;
+
+//** Horizontal offset for forms and lists.
+$component-offset-horizontal: 35%;
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color: white !default;
+
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg: $brand-primary !default;
+
+
+/* Profile avatar sizes
+-------------------------------------------------------------- */
+
+$twine-media-xs-size: 50px;
+$twine-media-sm-size: 75px;
+$twine-media-md-size: 85px;
+$twine-media-lg-size: 150px;
+
+
+/* Logo sizing
+-------------------------------------------------------------- */
+
+$twine-logo-ratio: 2000 / 515;
+$twine-logo-size-md: 150;
+$twine-logo-size-sm: 75;
+
+
+/* Inputs
+-------------------------------------------------------------- */
+
+$input-bg: $brand-grey-lighter;
+
+$input-bg-disabled: $brand-grey-lighter !default;
+
+$input-color: $brand-text;
+
+$input-border: $brand-grey-lighter;
+
+$input-border-radius: $border-radius-base;
+
+$input-border-focus: $brand-primary;
+
+$input-color-placeholder: $brand-text-secondary;
+
+$input-checkbox: 1em;
+
+//** Default `.form-control` height
+$input-height-base: 1.7;
+
+$input-height-lg: 2;
+
+$input-height-sm: 1.5;
+
+$legend-color: $brand-grey-dark !default;
+$legend-border-color: #e5e5e5 !default;
+
+//** Background color for textual input addons
+$input-group-addon-bg: $brand-grey-lighter !default;
+
+//** Border color for textual input addons
+$input-group-addon-border-color: $input-border !default;
+
+
+/* Breakpoints
+-------------------------------------------------------------- */
+
+$screen-xs: 480px !default;
+$screen-xs-min: $screen-xs !default;
+
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+
+$screen-md: 992px !default;
+$screen-md-min: $screen-md !default;
+
+$screen-lg: 1250px !default;
+$screen-lg-min: $screen-lg !default;
+
+$screen-xl: 1600px !default;
+$screen-xl-min: $screen-xl !default;
+
+$screen-xxl: 2000px;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: $screen-sm-min !default;
+$screen-sm-max: $screen-md-min - 1 !default;
+$screen-md-max: $screen-lg-min - 1 !default;
+$screen-lg-max: $screen-xl-min - 1 !default;
+
+
+/* Layout
+-------------------------------------------------------------- */
+
+$layout-aside-width-xs: 75%;
+$layout-aside-width-sm: 200px;
+$layout-aside-width-md: 180px;
+$layout-main-border-width: 5px;
+
+$layout-island-width-sm: 400px;
+$layout-island-width-md: $screen-sm-min;
+$layout-island-snap-threshold: 50px;
+
+
+/* Grid
+-------------------------------------------------------------- */
+
+//** Number of columns in the grid.
+$grid-columns: 12 !default;
+
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width: 30px !default;
+
+$grid-gutter-width-lg: 60px;
+
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint: $screen-sm-min !default;
+
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: $grid-float-breakpoint - 1 !default;
+
+
+/* Tables
+-------------------------------------------------------------- */
+
+//** Padding for `<th>`s and `<td>`s.
+$table-cell-padding: 8px !default;
+
+//** Padding for cells in `.table--condensed`.
+$table-condensed-cell-padding: 5px !default;
+
+//** Default background color used for all tables.
+$table-bg: transparent !default;
+
+//** Background color used for `.table--striped`.
+$table-bg-accent: #f9f9f9 !default;
+$table-bg-hover: rgba($brand-grey-lighter, 0.45);
+
+
+/* Buttons
+-------------------------------------------------------------- */
+
+// Config
+$btn-font-weight: 700;
+$btn-border-radius: 10em;
+$btn-link-disabled-color: $brand-grey-light !default;
+
+$btn-default-color: $brand-grey;
+$btn-default-bg: white;
+$btn-default-border: darken($brand-grey-lighter, 7.5%);
+
+$btn-primary-color: white;
+$btn-success-color: white;
+$btn-warning-color: white;
+$btn-danger-color: white;
+
+/* Z-index
+-------------------------------------------------------------- */
+
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-dropdown: 4;
+$zindex-popover: 4;
+$zindex-tooltip: 4;
+
+$zindex-back-to-top: 5;
+$zindex-is-fixed: 5;
+
+/* Header
+-------------------------------------------------------------- */
+
+$header-height: 94px;
+$header-height-mobile: 66px;
+
+/* Navs
+-------------------------------------------------------------- */
+
+$nav-link-padding: 10px 20px;
+$nav-link-hover-bg: $brand-grey-lighter !default;
+
+$nav-disabled-link-color: $brand-grey-light !default;
+$nav-disabled-link-hover-color: $brand-grey-light !default;
+
+$nav-open-link-hover-color: white !default;
+
+
+/* Pagination
+-------------------------------------------------------------- */
+
+$pagination-border: #f0f0f0;
+$pagination-bg: transparent;
+$pagination-hover-bg: transparent;
+$pagination-disabled-bg: transparent;
+
+$pagination-hover-bg: $brand-grey-lighter;
+
+$pagination-active-color: white;
+
+$pagination-disabled-color: $brand-grey-light;
+$pagination-disabled-bg: white;
+$pagination-disabled-border: $brand-grey-lighter;
+
+
+/* Labels
+-------------------------------------------------------------- */
+
+//** Default label text color
+$label-color: white !default;
+
+//** Default text color of a linked label
+$label-link-hover-color: white !default;
+
+
+/* Modals
+-------------------------------------------------------------- */
+
+//** Padding applied to the modal body
+$modal-inner-padding: 20px !default;
+
+//** Padding applied to the modal title
+$modal-title-padding: 15px !default;
+
+//** Modal title line-height
+$modal-title-line-height: $line-height-base !default;
+
+//** Background color of modal content area
+$modal-content-bg: white !default;
+
+//** Modal content border color
+$modal-content-border-color: rgba(0, 0, 0, 0.2) !default;
+
+//** Modal content border color **for IE8**
+$modal-content-fallback-border-color: #999999 !default;
+
+//** Modal backdrop background color
+$modal-backdrop-bg: black !default;
+
+//** Modal backdrop opacity
+$modal-backdrop-opacity: 0.5;
+
+$modal-lg: 900px;
+$modal-md: 600px;
+$modal-sm: 400px;
+$modal-xs: 300px;
+
+
+/* Alerts
+-------------------------------------------------------------- */
+
+$alert-padding: 0.5em 1em;
+$alert-border-radius: $border-radius-base;
+$alert-link-font-weight: bold !default;
+
+
+/* Thumbnails
+-------------------------------------------------------------- */
+
+//** Padding around the thumbnail image
+$thumbnail-padding: 4px !default;
+
+//** Thumbnail background color
+$thumbnail-bg: $brand-grey-lighter;
+
+//** Thumbnail border color
+$thumbnail-border: #dddddd !default;
+
+//** Thumbnail border radius
+$thumbnail-border-radius: $border-radius-base !default;
+
+//** Custom text color for thumbnail captions
+$thumbnail-caption-color: $brand-text !default;
+
+//** Padding around the thumbnail caption
+$thumbnail-caption-padding: 9px !default;
+
+
+/* Wells
+-------------------------------------------------------------- */
+
+$well-bg: whitesmoke !default;
+$well-border: darken($well-bg, 7%) !default;
+
+
+/* Badges
+-------------------------------------------------------------- */
+
+$badge-color: $brand-grey-light;
+$badge-bg: lighten($brand-grey-light, 30%);
+$badge-active-color: $badge-color;
+$badge-active-bg: $badge-bg;
+$badge-border-radius: 50em;
+
+/* Close
+-------------------------------------------------------------- */
+$close-color: black !default;
+$close-text-shadow: 0 1px 0 white !default;
+
+/* Arrow
+-------------------------------------------------------------- */
+$arrow-size: 12px;
+$arrow-border: 1 !default;
+$border: $arrow-size;
+$arrow: $arrow-size - $arrow-border;
+
+
+/* Tooltips
+-------------------------------------------------------------- */
+
+$tooltip-max-width: 350px;
+$tooltip-bg: white;
+$tooltip-opacity: 1;
+$tooltip-border: $brand-keyline;
+$tooltip-arrow-width: 15px;
+$tooltip-arrow-color: $tooltip-bg;

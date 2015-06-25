@@ -1,0 +1,59 @@
+/*
+* Name: Nav
+* Use: For site-wide navigation areas
+* Modifiers: Pill/Stacked/Inline/Justified/Tabs
+* Notes: N/A
+-------------------------------------------------------------- */
+
+.nav {
+    width: 100%;
+    padding-left: 0;
+    list-style: none;
+    @include clearfix;
+}
+
+.nav--primary {
+    background-color: $brand-primary;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -$guttering;
+    margin-bottom: 0;
+
+    .nav__list {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .nav__list--right {
+        @include media($min-width: $screen-sm) {
+            float: right;
+        }
+    }
+
+    .nav__item {
+        position: relative;
+        display: inline-block;
+        font-weight: 400;
+        margin-right: -5px;
+        font-size: $font-size-sm;
+        &:hover {
+            background-color: darken($brand-primary, 2.5%);
+        }
+    }
+
+    .nav__item--active { background-color: darken($brand-primary, 5%); }
+
+    .nav__link {
+        position: relative;
+        display: block;
+        padding: $guttering/2 $guttering;
+        color: $brand-white;
+        text-decoration: none;
+        &:visited {
+            color: $brand-white;
+        }
+        @include on-interaction {
+            color: $brand-white;
+        }
+    }
+}

@@ -1,0 +1,107 @@
+/* 
+* Name: Timeline 
+* Use: Historically ordered content
+* Modifiers: N/A
+* Note: N/A
+-------------------------------------------------------------- */
+
+.timeline {}
+
+.timeline__item {
+    border-spacing: 40px 0;
+    list-style: none;
+    margin-bottom: 0;
+    @include respond-min($screen-md) {
+        display: table;
+    }
+    &:hover {
+        .timeline__aside:before {
+            background-color: $brand-success;
+            transition: background .25s ease-in-out;
+        }
+    }
+}
+
+.timeline__aside {
+    position: relative;
+    margin-bottom: $guttering/1.25;
+    @include respond-min($screen-md) {
+        border-right: 2px solid $brand-grey-lighter;
+        display: table-cell;
+        vertical-align: top;
+        padding-top: 15px;
+        padding-right: 20px;
+        line-height: 1.5;
+        &:before {
+            background-color: $brand-secondary;
+            border: 2px solid $brand-white;
+            border-radius: 50%;
+            content: '';
+            height: 20px;
+            position: absolute;
+            right: -12px;
+            top: 15px;
+            width: 20px;
+            margin-top: 2px;
+            transition: background .25s ease-in-out;
+        }
+    }
+}
+
+.timeline__aside--first {
+    &:after {
+        @include respond-min($screen-md) { 
+            content: "";
+            position: absolute;
+            background-color: $brand-white;
+            width: 10px;
+            height: 10px;
+            border-radius: 50em;
+            display: block;
+            margin-right: -1px;
+            right: -5px;
+            left: auto;
+            top: -10px;
+        }
+    }
+}
+
+.timeline__date {
+    min-width: 5em;
+    display: block;
+    @include respond-max($screen-md) {
+        margin-left: $guttering/6;
+    }
+}
+
+.timeline__details {
+    padding: 0 0 $guttering;
+    position: relative;
+    width: 100%;
+    &:before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        border: .75em solid transparent;
+        bottom: 0;
+        margin-left: 0;
+        top: -20px;
+        left: 22px;
+        border-right-color: $brand-primary;
+        @include respond-max($screen-md) {
+            border-right-color: transparent;
+            border-bottom-color: $brand-primary;
+        }
+    }
+    @include respond-min($screen-md) {
+        padding: $guttering/4 0 $guttering*2;
+        display: table-cell;
+        // Weird hack to make Firefox respect widths
+        max-width: 0;
+        &:before {
+            top: 15px;
+            left: -22px;
+        }
+    }
+}

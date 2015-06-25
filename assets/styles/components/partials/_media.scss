@@ -1,0 +1,99 @@
+/*
+* Name: Media
+* Use: For displaying an image next to text
+* Modifiers: N/A
+* Notes: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+-------------------------------------------------------------- */
+
+.media { @include guttering; }
+
+.media,
+.media__body {
+    overflow: hidden;
+    zoom: 1;
+}
+
+// Proper spacing between instances of .media
+.media--block {
+    @include respond-min($screen-md) {
+        min-height: 5em;
+    }
+}
+
+// For images and videos, set to block
+.media__object {
+    display: block;
+}
+
+.media__object--pad {
+    padding-top: .5em;
+}
+
+.media__object--block {
+    background-color: $brand-grey-lighter;
+    height: 5em;
+    width: 5em;
+    padding: .5em;
+    float: left;
+    margin-right: 1em;
+}
+
+.media__feed-image {
+    display: block;
+    padding: 0;
+}
+
+.media__feed-image--blocked {
+    display: block;
+    position: relative;
+    margin-bottom: $guttering / 2;
+    width: 100%;
+    float: none;
+}
+
+// Reset margins on headings for tighter default spacing
+.media__heading {
+    margin-bottom: $guttering/6;
+}
+
+.media__small, .flag__small, .bubble__small {
+    @include respond-min($screen-lg) {
+        font-size: 90%;
+
+        .media__heading {
+            font-size: 100%;
+
+            .t-solar & {
+                font-size: 1.6rem;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+    }
+}
+
+// Media image alignment
+// -------------------------
+
+.media {
+    > .pull-left {
+        margin-right: 1em;
+        min-width: inherit;
+    }
+    > .pull-right {
+        margin-left: 1em;
+        min-width: inherit;
+    }
+}
+
+// Media list variation
+// -------------------------
+
+// Undo default ul/ol styles
+.media__list {
+    padding-left: 0;
+    list-style: none;
+}

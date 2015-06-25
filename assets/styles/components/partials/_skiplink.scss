@@ -1,0 +1,25 @@
+/*
+* Name: Skiplink
+* Use: Skip to content button on tab
+* Modifiers: N/A
+* Notes: N/A
+-------------------------------------------------------------- */
+
+.skiplink { 
+    background-color: $brand-black;
+    text-align: center; 
+}
+
+.skiplink__link {
+    position: absolute;
+    left: -9999em;
+    @include inline-block;
+    margin: 0.75em 0;
+    padding: .25em .5em;
+    text-decoration: none;
+    color: black;
+
+    &:focus {
+        position: static;
+    }
+}

@@ -1,0 +1,75 @@
+/* 
+* Name: Burger
+* Use: Replicates a 3 line menu icon with the possibility of animation
+* Modifiers: Open state
+* Notes: N/A
+-------------------------------------------------------------- */
+
+.burger { 
+    height: 20px;
+    position: relative;
+    // Make burger more clickable
+    &:after {
+        content: "";
+        top: -1.6em;
+        height: $header-height-mobile;
+        position: absolute;
+        width: 100%;
+        right: -25%;
+    }
+}
+
+.burger--inverse {
+    .burger__inner--closed { background-color: $brand-white; }
+}
+
+.burger__inner {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 2px;
+    transition: background 0.25s;
+    border-radius: 10em;
+    transition: background .25s;
+    z-index: $zindex-burger;
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        background: inherit;
+        width: 100%;
+        height: 100%;
+        border-radius: 10em;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        transition: transform .25s, background .25s;
+    }
+    &::before {
+        top: -6px;
+        transform: rotate(0);
+    }
+    &::after {
+        bottom: -6px;
+        transform: rotate(0);
+    }
+}
+
+.burger__inner--closed {
+    background-color: $brand-primary;
+}
+
+.burger__inner--open {
+    background: rgba(white, 0);
+    &::before, &::after {
+        background: rgba(white, 1);
+    }
+    &::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    &::after {
+        bottom: 0;
+        transform: rotate(225deg);
+    }
+} 

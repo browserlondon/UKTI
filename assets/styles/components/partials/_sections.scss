@@ -1,0 +1,55 @@
+/*
+* Pattern name: Page
+* Use: Content handling
+* Modifiers: Padding options
+* Note: N/A
+-------------------------------------------------------------- */
+
+.section {
+    width: 100%;
+    padding: $guttering*1.6;
+    background-size: cover;
+    @include media($min-width: $screen-md) {
+        padding: $guttering*2;
+    }
+    @include media($min-width: $screen-lg) {
+        padding: $guttering*4;
+    }
+    @include media($max-width: $screen-xs) {
+        padding: $guttering*1.6 $guttering;
+    }
+}
+
+.section--sm {
+    @include media($min-width: $screen-lg) {
+        padding: $guttering*2;
+    }
+}
+
+.section--primary {
+    background-color: $brand-primary;
+    color: white;
+}
+
+.section--transparent {
+    background-color: transparent;
+    color: white;
+}
+
+.section--plain {
+    background-color: $brand-white;
+}
+
+.section--subtle-highlight {
+    background-color: $brand-grey-lighter;
+}
+
+.section--bordered {
+    border-top: 10px solid $brand-primary;
+}
+
+.section__content {
+    margin: auto;
+    display: block;
+    @include guttering; 
+}

@@ -1,0 +1,22 @@
+/*
+* Name: Logo
+* Use: For displaying Twine logo
+* Modifiers: Logo size
+* Notes: N/A
+-------------------------------------------------------------- */
+
+.logo {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    &:hover, &:focus {
+        border-bottom: 0;
+        text-decoration: none;
+    }
+}
+
+.logo__img {
+    display: inline-block;
+    vertical-align: middle;
+}

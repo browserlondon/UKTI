@@ -1,0 +1,135 @@
+/*
+* Name: Forms
+* Note: N/A
+-------------------------------------------------------------- */
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $brand-keyline;
+
+    padding: 10px 8px 6px 8px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &:focus {
+        background: $white;
+        outline: 3px solid $yellow;
+        outline-offset: -3px;
+    }
+}
+
+select {
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+    padding-bottom: $guttering/4;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+legend {
+    font-weight: bold;
+    padding: $guttering/2;
+
+    @include ie-lte(8) {
+        margin-left: -7px;
+    }
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 $guttering;
+}
+
+form {
+
+    ol, ul {
+        padding-left: 0 !important;
+        list-style: none !important;
+        margin-left: 0;
+    }
+
+    li {
+        margin-bottom: $guttering/2;
+    }
+
+    br {
+        display: none;
+    }
+}
+
+input, button, .btn {
+    line-height: normal;
+}
+
+input[type=search],
+input[type=submit] {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+
+input[type=search] {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+button,
+input[type=submit],
+input[type=button],
+input[type=reset],
+input[type=file] {
+    width: auto;
+}
+
+input[type=file] {
+    border: none;
+    padding: 0;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    vertical-align: baseline;
+    background: none;
+    border: none;
+    height: $input-checkbox;
+    width: $input-checkbox;
+}
+
+.checkbox {
+    position: relative;
+    padding-left: $input-checkbox * 1.25;
+
+    label {
+        padding-bottom: 0;
+        font-weight: normal;
+    }
+
+    input {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -$input-checkbox/2;
+    }
+}

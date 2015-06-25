@@ -1,0 +1,40 @@
+/*
+* Name: Images
+* Note: N/A
+-------------------------------------------------------------- */
+
+img {
+    // width: 100%;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+
+    .lt-ie9 & { width: auto; }
+}
+
+svg { fill: currentColor; }
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+    @include img-responsive;
+}
+
+// Rounded corners
+.img-rounded {
+    border-radius: $border-radius-lg;
+}
+
+// Image thumbnails
+.img-thumbnail {
+    padding: $thumbnail-padding;
+    line-height: $line-height-base;
+    background-color: $thumbnail-bg;
+    border: 1px solid $thumbnail-border;
+    border-radius: $thumbnail-border-radius;
+    transition: all .2s ease-in-out;
+    // Keep them at most 100% wide
+    @include img-responsive(inline-block);
+}
+
+// Perfect circle to be super down with the Shoreditch kids amirite!?
+.img-circle { border-radius: 50%; }

@@ -1,0 +1,110 @@
+/*
+* Name: Lists
+* Note: N/A
+-------------------------------------------------------------- */
+
+// Unordered and Ordered lists
+
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: $guttering / 2;
+    ul,
+    ol {
+        margin-bottom: 0;
+    }
+}
+
+// List options
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+.list-unstyled, %list-unstyled {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+// Inline turns list items into inline-block
+.list-inline, %list-inline {
+    @extend %list-unstyled;
+    margin-top: -$guttering/2;
+    margin-bottom: 0;
+    > li {
+        display: inline-block;
+        margin-right: $guttering;
+        margin-top: $guttering/2;
+        margin-bottom: 0;
+        &:last-child { margin-right: 0; }
+    }
+}
+
+.list-inline--blocked {
+    @include media($max-width: $screen-sm) {
+        > li {
+            float: left;
+            width: 50%;
+            text-align: left;
+            margin-right: 0;
+        }
+    }
+}
+
+.list-inline--zero-marg {
+    > li {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+
+.list-inline--more-marg {
+    margin-bottom: -15px;
+    > li {  margin-bottom: 15px; }
+}
+
+.list-blocked {
+    > li {
+        width: 100%;
+        display: block;
+        margin-bottom: 5px;
+        &:last-child { margin-bottom: 0; }
+    }
+}
+
+.list-bordered {
+    > li {
+        padding: 1em;
+        margin-bottom: 0;
+        border-bottom: 1px solid;
+        border-color: $brand-keyline;
+    }
+}
+
+.list-overflow {
+    > li {
+        @include text-overflow;
+    }
+}
+
+// Description Lists
+dl {
+    @include guttering;
+    margin-top: 0;
+    // Remove browser default
+    margin-bottom: $guttering;
+}
+
+dt,
+dd {
+    line-height: $line-height-base;
+}
+
+dt {
+    font-weight: bold;
+    margin-bottom: $guttering / 5;
+}
+
+dd {
+    margin-left: 0;
+    margin-bottom: $guttering;
+    @include guttering;
+}

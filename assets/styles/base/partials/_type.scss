@@ -1,0 +1,181 @@
+/*
+* Name: Typography
+* Note: N/A
+-------------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+/*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */
+@font-face {
+    font-family: 'nta';
+    src: url(../assets/fonts/NTA-Light-20130221-4eaebdc297260abcaaf375e80df3f3d7.eot#) format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'nta';
+    src: url(../assets/fonts/NTA-Bold-20130221-c46bf6ef74ccb57bb1796e513321ee16.eot#) format("embedded-opentype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'ntatabularnumbers';
+    src: url(../assets/fonts/NTATabularNumbers-Light-b027e1c1608902c0f6760546ba21e9fa.eot#) format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'ntatabularnumbers';
+    src: url(../assets/fonts/NTATabularNumbers-Bold-2f19de254f212f2b939e6040032bdd1c.eot#) format("embedded-opentype");
+    font-weight: bold;
+}
+
+
+//
+// Typography
+// --------------------------------------------------
+
+html {
+    font-size: 62.5%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background-color: $grey-1;
+}
+
+body {
+    background-color: $white;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: $line-height-base;
+    font-size: $font-size-base;
+    font-family: $NTA-Light;
+    @include media($max-width: $screen-sm) { font-size: $font-size-sm; }
+}
+
+h1, h2, h3, h4, h5, h6,
+pre, p, ul, ol, li, dl, dd, form, table, blockquote, figure, figcaption {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 0;
+}
+
+h1, .h1 {
+    @include bold-24;
+    margin-bottom: 20px;
+}
+
+h2, .h2 {
+    @include bold-19;
+    margin-bottom: 20px;
+}
+
+h3, .h3 {
+    @include bold-16;
+    margin-bottom: 5px;
+}
+
+h4, .h4, h5, .h5, h6, .h6 {
+    @include bold-14;
+    margin-bottom: 6px;
+}
+
+p, ul, ol, form, table, dl, dd, blockquote, pre {
+    margin-bottom: $guttering;
+}
+
+ul {
+    padding-left: $guttering;
+    list-style: disc;
+}
+
+ol {
+    padding-left: $guttering;
+    list-style: decimal;
+}
+
+ul,
+ol {
+    ul,
+    ol {
+        margin-bottom: $guttering;
+        padding-left: $guttering;
+    }
+}
+
+blockquote {
+    margin-bottom: $guttering;
+    padding: 0 $guttering;
+    border-left: 8px solid $grey-2;
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+small,
+.small {
+    @include core-16($line-height: (25 / 16), $line-height-640: (20 / 14));
+}
+
+abbr[title] {
+    cursor: help;
+}
+
+.lead {
+    @include core-24($line-height: (30 / 24), $line-height-640: (25 / 18));
+    // font-family: "TradeGothicLT";
+    font-weight: normal;
+    color: $grey-1;
+    text-shadow: 0 0 1px rgba($grey-3, 0.3);
+}
+
+.ll {
+    max-width: 700px;
+}
+
+.muted {
+    color: $grey-4;
+}
+
+
+// Default link style
+a {
+    color: $link-colour;
+    font-weight: 700;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.3);
+
+    &:visited {
+        color: $link-visited-colour;
+    }
+
+    &:hover {
+        color: $link-hover-colour;
+        text-decoration: underline;
+    }
+
+    &:active {
+        top: 0;
+        color: $link-active-colour;
+    }
+
+    &:focus {
+        background-color: $yellow;
+        outline: 3px solid $yellow;
+        outline-offset: -3px;
+    }
+}
