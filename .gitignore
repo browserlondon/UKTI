@@ -12,3 +12,4 @@ web/sitemap.xml.gz
 /.idea/
 /.idea/*
 /.idea
+/config/deploy/*
