@@ -21,7 +21,7 @@
     }
 }
 
-.masthead__subtext {
+.masthead__subtext, .masthead__link {
     text-decoration: none;
     color: $brand-white;
     &:visited {

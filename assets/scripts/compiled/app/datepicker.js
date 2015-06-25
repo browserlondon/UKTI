@@ -1,0 +1,1 @@
+require(["jquery","pikaday"],function(e){var t={};t.datepicker=function(){var t={};return t.init=function(){$datepicker=e(".datepicker")[0],$datepicker.pikaday({firstDay:1})},t}(),t.datepicker.init()});

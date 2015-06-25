@@ -5,7 +5,8 @@
 
 .grid, .container { 
     @extend %site-width-container; 
-    max-width: 75em;
+    max-width: 85em;
+    min-width: 1000px;
 }
 
 .grid__row {

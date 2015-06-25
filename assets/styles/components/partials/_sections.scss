@@ -9,12 +9,8 @@
     width: 100%;
     padding: $guttering*1.6;
     background-size: cover;
-    @include media($min-width: $screen-md) {
-        padding: $guttering*2;
-    }
-    @include media($min-width: $screen-lg) {
-        padding: $guttering*4;
-    }
+    border-bottom: 1px solid $brand-keyline;
+    &:last-child { border-bottom: 0; }
     @include media($max-width: $screen-xs) {
         padding: $guttering*1.6 $guttering;
     }
@@ -52,4 +48,8 @@
     margin: auto;
     display: block;
     @include guttering; 
+}
+
+.section__content--sm {
+    max-width: 650px;
 }

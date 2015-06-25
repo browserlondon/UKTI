@@ -11,8 +11,8 @@
     position: relative;
     display: table;
     width: 100%;
-    @include guttering;
     border-collapse: separate;
+    @include guttering;
 }
 
 // Display as table-cell
@@ -22,9 +22,6 @@
 .input-group-btn,
 .input-group .form-control {
     display: table-cell;
-    &:not(:first-child):not(:last-child) {
-        border-radius: 0;
-    }
 }
 
 // Addon and addon wrapper for buttons
@@ -34,6 +31,7 @@
     width: 1%;
     white-space: nowrap;
     vertical-align: middle;
+    .btn { padding: 10px 8px 6px 8px; }
 }
 
 // Text input groups
@@ -47,7 +45,6 @@
     text-align: center;
     background-color: $input-group-addon-bg;
     border: 2px solid $input-group-addon-border-color;
-    border-radius: $border-radius-base;
 }
 
 // Reset rounded corners
@@ -59,7 +56,6 @@
 .input-group-btn:first-child .dropdown-toggle,
 .input-group-btn:last-child .btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child .btn-group:not(:last-child) > .btn {
-    @include border-right-radius(0);
     border-right: 0;
 }
 
@@ -67,15 +63,6 @@
     border-right: 0;
 }
 
-.input-group .form-control:last-child,
-.input-group-addon:last-child,
-.input-group-btn:last-child .btn,
-.input-group-btn:last-child .btn-group > .btn,
-.input-group-btn:last-child .dropdown-toggle,
-.input-group-btn:first-child .btn:not(:first-child),
-.input-group-btn:first-child .btn-group:not(:first-child) > .btn {
-    @include border-left-radius(0);
-}
 
 // Button input groups
 // -------------------------
