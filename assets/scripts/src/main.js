@@ -2,6 +2,7 @@ define('jquery', [], function() { return jQuery; });
 define('modernizr', [], function() { return Modernizr });
 
 require.config({
+    enforceDefine: true,
     paths: {
         smoothScroll: 'libs/smoothscroll.min',
         fastclick: 'libs/fastclick',
@@ -12,6 +13,7 @@ require.config({
 requirejs(["app/fastclick"]);
 requirejs(["app/back-to-top"]);
 requirejs(["app/fixed-nav"]);
+requirejs(["app/polyfills"]);
 
 var hasClass = function (elem, className) {
     return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');

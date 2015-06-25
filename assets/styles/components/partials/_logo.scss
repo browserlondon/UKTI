@@ -10,11 +10,14 @@
     display: inline-block;
     vertical-align: middle;
     text-align: left;
+    max-width: 300px;
     &:hover, &:focus {
         border-bottom: 0;
         text-decoration: none;
     }
 }
+
+.logo--sm { max-width: 175px; }
 
 .logo__img {
     display: inline-block;

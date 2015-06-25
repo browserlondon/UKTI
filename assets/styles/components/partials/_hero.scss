@@ -8,7 +8,13 @@
 .hero { @include guttering; }
 
 .hero__title {
-    @include core-48;
+    @include core-36;
     padding-bottom: 0;
+    margin-bottom: 10px;
     font-weight: bold;
+}
+
+.hero__sub {
+    font-weight: normal;
+    max-width: 750px;
 }

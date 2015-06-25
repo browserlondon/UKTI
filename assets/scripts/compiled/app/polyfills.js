@@ -1,0 +1,1 @@
+require(["jquery","modernizr"],function(e){var t={};t.modernizrSVG=function(){var t={},n=e('*[src*="svg"]');return t.init=function(){if(Modernizr.svg)return;n.attr("src",function(){return e(this).attr("src").replace(".svg",".png")})},t}(),e(document).ready(function(){t.modernizrSVG.init()})});

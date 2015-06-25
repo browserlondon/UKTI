@@ -19,16 +19,6 @@
                 line-height: $line-height-base;
                 vertical-align: middle;
                 padding: $guttering / 1.75 $guttering / 1.25;
-                @include respond-max($screen-sm) {
-                    padding-left: $guttering / 2;
-                    padding-right: $guttering / 2;
-                }
-                &[class*="col-"] {
-                    position: static;
-                    // Prevent border hiding in Firefox and IE9/10 (see https://github.com/twbs/bootstrap/issues/11623)
-                    float: none;
-                    display: table-cell;
-                }
             }
         }
     }
@@ -198,23 +188,6 @@
     }
 }
 
-.table--population__role { min-width: 100px; }
-
-
-// Table backgrounds
-//
-// Exact selectors below required to override `.table--striped` and prevent
-// inheritance to nested tables.
-
-// Generate the contextual variants
-// @include table-row-variant("success", $state-success-bg);
-
-// @include table-row-variant("info", $state-info-bg);
-
-// @include table-row-variant("warning", $state-warning-bg);
-
-// @include table-row-variant("danger", $state-danger-bg);
-
 // Responsive tables
 //
 // Wrap your tables in `.table-responsive` and we'll make them mobile friendly
@@ -223,14 +196,11 @@
 
 .table-responsive {
     margin-bottom: $guttering;
-    &:last-child {
-        margin-bottom: 0;
-        border-bottom: 0;
-    }
+    &:last-child { margin-bottom: 0; }
     > .table {
         margin-bottom: 0;
     }
-    @include respond-max($screen-xs-max) {
+    @include media($max-width: $screen-xs) {
         width: 100%;
         margin-bottom: $line-height-computed * 0.75;
         overflow-y: hidden;
@@ -294,3 +264,8 @@
 .table__cell {}
 
 .table__cell--action { width: 55px; }
+
+.table__row--pulse {
+    background-color: #FFFFCC;
+    transition: background-color 1s linear;
+}
