@@ -6,11 +6,12 @@
 .grid, .container { 
     margin: 0 auto;
     max-width: 85em;
+    padding: 0 30px;
 }
 
 .grid--zero-pad {
-    margin-left: 0;
-    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .grid__row {
