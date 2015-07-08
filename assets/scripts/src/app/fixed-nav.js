@@ -17,7 +17,7 @@ require(['jquery', 'modernizr'], function($, Modernizr) {
         });
 
         var offset = 0;
-        var minWidth = Modernizr.mq('only screen and (min-width: 990px)');
+        var minWidth = Modernizr.mq('only screen and (min-width: 1060px)');
         var windowWidth = $(window).width();
 
         module.init = function() {
