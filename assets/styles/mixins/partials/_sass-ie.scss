@@ -4,7 +4,7 @@
 * Notes: See http://jakearchibald.github.io/sass-ie/
 -------------------------------------------------------------- */
 
-$fix-mqs: false !default;
+$fix-mqs: $screen-lg;
 
 @mixin respond-min($width) {
     @if $fix-mqs {

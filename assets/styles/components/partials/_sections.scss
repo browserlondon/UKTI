@@ -7,17 +7,14 @@
 
 .section {
     width: 100%;
-    padding: $guttering*1.6;
+    padding: 30px;
     background-size: cover;
     border-bottom: 1px solid $brand-keyline;
     &:last-child { border-bottom: 0; }
-    @include media($max-width: $screen-xs) {
-        padding: $guttering*1.6 $guttering;
-    }
 }
 
 .section--sm {
-    @include media($min-width: $screen-lg) {
+    @include respond-min($screen-lg) { 
         padding: $guttering*2;
     }
 }

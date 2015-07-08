@@ -16,16 +16,6 @@
   display: block;
   clear: both; }
 
-.grid, .container {
-  max-width: 960px;
-  margin: 0 15px; }
-  @media (min-width: 641px) {
-    .grid, .container {
-      margin: 0 30px; } }
-  @media (min-width: 1020px) {
-    .grid, .container {
-      margin: 0 auto; } }
-
 .grid__row {
   margin: 0 -15px; }
 
@@ -153,6 +143,11 @@
 2. The use of `table` rather than `block` is only necessary if using `:before` to contain the top-margins of child elements.
 
 Source: http://nicolasgallagher.com/micro-clearfix-hack/
+-------------------------------------------------------------- */
+/*
+* Mixin name: SASS-IE
+* Use: Media query handling
+* Notes: See http://jakearchibald.github.io/sass-ie/
 -------------------------------------------------------------- */
 /* ==========================================================================
    Base styles
@@ -422,8 +417,8 @@ hr,
 * Note: N/A
 -------------------------------------------------------------- */
 .grid, .container {
-  max-width: 85em;
-  min-width: 1000px; }
+  margin: 0 auto;
+  max-width: 85em; }
 
 .grid--zero-pad {
   margin-left: 0;
@@ -431,51 +426,22 @@ hr,
 
 .grid__row > *:last-child, .grid__row > *:last-child > *:last-child, .grid__row > *:last-child > *:last-child > *:last-child {
   margin-bottom: 0; }
-.grid__row .grid__column--third {
+.grid__row .grid__column {
+  float: left;
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  @media (min-width: 641px) {
-    .grid__row .grid__column--third {
-      float: left;
-      width: 33.33333%; } }
+.grid__row .grid__column--one-third {
+  width: 33.33333%; }
 .grid__row .grid__column--two-thirds {
-  padding: 0 15px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-  @media (min-width: 641px) {
-    .grid__row .grid__column--two-thirds {
-      float: left;
-      width: 66.66667%; } }
+  width: 66.66667%; }
 .grid__row .grid__column--half {
-  padding: 0 15px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-  @media (min-width: 641px) {
-    .grid__row .grid__column--half {
-      float: left;
-      width: 50%; } }
+  width: 50%; }
 .grid__row .grid__column--three-fourths {
-  padding: 0 15px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-  @media (min-width: 641px) {
-    .grid__row .grid__column--three-fourths {
-      float: left;
-      width: 75%; } }
+  width: 75%; }
 .grid__row .grid__column--one-fourth {
-  padding: 0 15px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-  @media (min-width: 641px) {
-    .grid__row .grid__column--one-fourth {
-      float: left;
-      width: 25%; } }
+  width: 25%; }
 
 .grid__row--vertical-align {
   display: table; }
@@ -525,8 +491,7 @@ html {
   background-color: #6f777b;
   -webkit-tap-highlight-color: rgba(200, 30, 83, 0);
   width: 100%;
-  position: relative;
-  overflow-x: hidden; }
+  position: relative; }
   html.lt-ie9 {
     overflow-x: visible; }
 
@@ -539,12 +504,9 @@ body {
   font-size: 1.6rem;
   font-family: "nta", Arial, sans-serif;
   position: relative;
-  overflow-x: hidden;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  -webkit-overflow-scrolling: touch; }
-  @media (max-width: 768px) {
-    body {
-      font-size: 1.4rem; } }
+  -webkit-overflow-scrolling: touch;
+  min-width: 1000px; }
 
 h1, h2, h3, h4, h5, h6,
 pre, p, ul, ol, li, dl, dd, form, table, blockquote, figure, figcaption {
@@ -556,52 +518,24 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-top: 0; }
 
 h1, .h1 {
-  font-family: "nta", Arial, sans-serif;
   font-size: 24px;
-  line-height: 1.25;
-  font-weight: 700;
-  text-transform: none;
+  font-weight: bold;
   margin-bottom: 20px; }
-  @media (max-width: 640px) {
-    h1, .h1 {
-      font-size: 18px;
-      line-height: 1.2; } }
 
 h2, .h2 {
-  font-family: "nta", Arial, sans-serif;
   font-size: 19px;
-  line-height: 1.31579;
-  font-weight: 700;
-  text-transform: none;
+  font-weight: bold;
   margin-bottom: 20px; }
-  @media (max-width: 640px) {
-    h2, .h2 {
-      font-size: 16px;
-      line-height: 1.25; } }
 
 h3, .h3 {
-  font-family: "nta", Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.25;
-  font-weight: 700;
-  text-transform: none;
+  font-weight: bold;
   margin-bottom: 5px; }
-  @media (max-width: 640px) {
-    h3, .h3 {
-      font-size: 14px;
-      line-height: 1.14286; } }
 
 h4, .h4, h5, .h5, h6, .h6 {
-  font-family: "nta", Arial, sans-serif;
   font-size: 14px;
-  line-height: 1.42857;
-  font-weight: 700;
-  text-transform: none;
+  font-weight: bold;
   margin-bottom: 6px; }
-  @media (max-width: 640px) {
-    h4, .h4, h5, .h5, h6, .h6 {
-      font-size: 12px;
-      line-height: 1.25; } }
 
 p, ul, ol, form, table, dl, dd, blockquote, pre {
   margin-bottom: 2.4rem; }
@@ -703,13 +637,6 @@ ol {
     margin-bottom: 0; }
     .list-inline > li:last-child {
       margin-right: 0; }
-
-@media (max-width: 768px) {
-  .list-inline--blocked > li {
-    float: left;
-    width: 50%;
-    text-align: left;
-    margin-right: 0; } }
 
 .list-inline--zero-marg > li {
   margin-right: 0;
@@ -1215,46 +1142,6 @@ input[type=radio] {
     margin-bottom: 0; }
   .table-responsive > .table {
     margin-bottom: 0; }
-  @media (max-width: 480px) {
-    .table-responsive {
-      width: 100%;
-      margin-bottom: 1.5rem;
-      overflow-y: hidden;
-      overflow: auto;
-      -ms-overflow-style: -ms-autohiding-scrollbar;
-      -webkit-overflow-scrolling: touch;
-      border: 1px solid;
-      border-color: #EAEAEA; }
-      .table-responsive > .table > thead > tr > th,
-      .table-responsive > .table > thead > tr > td,
-      .table-responsive > .table > tbody > tr > th,
-      .table-responsive > .table > tbody > tr > td,
-      .table-responsive > .table > tfoot > tr > th,
-      .table-responsive > .table > tfoot > tr > td {
-        white-space: nowrap; }
-      .table-responsive > .table--bordered {
-        border: 0; }
-        .table-responsive > .table--bordered > thead > tr > th:first-child,
-        .table-responsive > .table--bordered > thead > tr > td:first-child,
-        .table-responsive > .table--bordered > tbody > tr > th:first-child,
-        .table-responsive > .table--bordered > tbody > tr > td:first-child,
-        .table-responsive > .table--bordered > tfoot > tr > th:first-child,
-        .table-responsive > .table--bordered > tfoot > tr > td:first-child {
-          border-left: 0; }
-        .table-responsive > .table--bordered > thead > tr > th:last-child,
-        .table-responsive > .table--bordered > thead > tr > td:last-child,
-        .table-responsive > .table--bordered > tbody > tr > th:last-child,
-        .table-responsive > .table--bordered > tbody > tr > td:last-child,
-        .table-responsive > .table--bordered > tfoot > tr > th:last-child,
-        .table-responsive > .table--bordered > tfoot > tr > td:last-child {
-          border-right: 0; }
-        .table-responsive > .table--bordered > tbody > tr:last-child > th,
-        .table-responsive > .table--bordered > tbody > tr:last-child > td,
-        .table-responsive > .table--bordered > tfoot > tr:last-child > th,
-        .table-responsive > .table--bordered > tfoot > tr:last-child > td {
-          border-bottom: 0; }
-      .table-responsive > .table--outlined {
-        border: 0; } }
 
 .table__cell--action {
   width: 55px; }
@@ -1303,9 +1190,8 @@ input[type=radio] {
 .masthead__area {
   width: 100%; }
 
-@media (min-width: 768px) {
-  .masthead__area--align {
-    text-align: right; } }
+.masthead__area--align {
+  text-align: right; }
 
 .masthead__subtext, .masthead__link {
   text-decoration: none;
@@ -1340,9 +1226,8 @@ input[type=radio] {
   .nav--primary .nav__list {
     margin-bottom: 0;
     padding-bottom: 0; }
-  @media (min-width: 768px) {
-    .nav--primary .nav__list--right {
-      float: right; } }
+  .nav--primary .nav__list--right {
+    float: right; }
   .nav--primary .nav__item {
     position: relative;
     display: inline-block;
@@ -1357,7 +1242,7 @@ input[type=radio] {
   .nav--primary .nav__link {
     position: relative;
     display: block;
-    padding: 1.2rem 2.4rem;
+    padding: 12px 15px;
     color: white;
     text-decoration: none; }
     .nav--primary .nav__link:visited {
@@ -1501,19 +1386,15 @@ input[type=radio] {
 -------------------------------------------------------------- */
 .section {
   width: 100%;
-  padding: 3.84rem;
+  padding: 30px;
   -webkit-background-size: cover;
   background-size: cover;
   border-bottom: 1px solid #EAEAEA; }
   .section:last-child {
     border-bottom: 0; }
-  @media (max-width: 480px) {
-    .section {
-      padding: 3.84rem 2.4rem; } }
 
-@media (min-width: 1250px) {
-  .section--sm {
-    padding: 4.8rem; } }
+.section--sm {
+  padding: 4.8rem; }
 
 .section--primary {
   background-color: #c81e53;
@@ -1622,18 +1503,11 @@ input[type=radio] {
   margin-bottom: 0; }
 
 .hero__title {
-  font-family: "nta", Arial, sans-serif;
   font-size: 36px;
-  line-height: 1.11111;
-  font-weight: 400;
-  text-transform: none;
+  line-height: 1.2;
   padding-bottom: 0;
   margin-bottom: 10px;
   font-weight: bold; }
-  @media (max-width: 640px) {
-    .hero__title {
-      font-size: 24px;
-      line-height: 1.04167; } }
 
 .hero__sub {
   font-weight: normal;
@@ -1934,28 +1808,11 @@ http://nicolasgallagher.com/micro-clearfix-hack/
 .text-interaction:hover {
   cursor: pointer; }
 
-@media (max-width: 1250px) {
-  .text-responsive-lg {
-    font-size: 1.4rem; } }
-
-@media (max-width: 992px) {
-  .text-responsive-md {
-    font-size: 1.4rem; } }
-
 .text-lead {
   font-size: 3.8rem; }
-  @media (max-width: 1250px) {
-    .text-lead {
-      font-size: 3.6rem; } }
-  @media (max-width: 768px) {
-    .text-lead {
-      font-size: 2.4rem; } }
 
 .text-sub {
   font-size: 2rem; }
-  @media (max-width: 768px) {
-    .text-sub {
-      font-size: 1.6rem; } }
 
 .text-serif {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -1992,10 +1849,6 @@ strong, .strong {
 
 .text-left {
   text-align: left; }
-
-@media (max-width: 992px) {
-  .text-left-md {
-    text-align: left; } }
 
 .text-right {
   text-align: right; }

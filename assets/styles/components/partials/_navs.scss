@@ -25,9 +25,7 @@
     }
 
     .nav__list--right {
-        @include media($min-width: $screen-sm) {
-            float: right;
-        }
+        @include respond-min($screen-sm) { float: right; }
     }
 
     .nav__item {
@@ -37,9 +35,7 @@
         font-weight: 400;
         margin-right: -5px;
         font-size: $font-size-sm;
-        &:hover {
-            background-color: darken($brand-primary, 2.5%);
-        }
+        &:hover { background-color: darken($brand-primary, 2.5%); }
     }
 
     .nav__item--active { background-color: darken($brand-primary, 5%); }
@@ -47,15 +43,11 @@
     .nav__link {
         position: relative;
         display: block;
-        padding: $guttering/2 $guttering;
+        padding: 12px 15px;
         color: $brand-white;
         text-decoration: none;
-        &:visited {
-            color: $brand-white;
-        }
-        @include on-interaction {
-            color: $brand-white;
-        }
+        &:visited { color: $brand-white; }
+        @include on-interaction { color: $brand-white; }
     }
 
     .nav__link--overflow {

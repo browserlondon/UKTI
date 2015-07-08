@@ -11,23 +11,15 @@
     padding: $guttering/3 0;
 }
 
-.masthead__area {
-    width: 100%;
-}
+.masthead__area { width: 100%; }
 
 .masthead__area--align {
-    @include media($min-width: $screen-sm) {
-        text-align: right;
-    }
+    @include respond-min($screen-sm) { text-align: right; }
 }
 
 .masthead__subtext, .masthead__link {
     text-decoration: none;
     color: $brand-white;
-    &:visited {
-        color: $brand-white;
-    }
-    @include on-interaction {
-        color: $brand-white;
-    }
+    &:visited { color: $brand-white; }
+    @include on-interaction { color: $brand-white; }
 }

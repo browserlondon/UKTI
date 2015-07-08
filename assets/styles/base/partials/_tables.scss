@@ -200,7 +200,7 @@
     > .table {
         margin-bottom: 0;
     }
-    @include media($max-width: $screen-xs) {
+    @include respond-max($screen-xs) { 
         width: 100%;
         margin-bottom: $line-height-computed * 0.75;
         overflow-y: hidden;

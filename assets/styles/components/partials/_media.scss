@@ -14,14 +14,10 @@
 }
 
 // For images and videos, set to block
-.media__object {
-    display: block;
-}
+.media__object { display: block; }
 
 // Reset margins on headings for tighter default spacing
-.media__heading {
-    margin-bottom: $guttering/6;
-}
+.media__heading { margin-bottom: $guttering/6; }
 
 // Media image alignment
 // -------------------------

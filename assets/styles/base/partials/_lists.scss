@@ -39,7 +39,7 @@ ol {
 }
 
 .list-inline--blocked {
-    @include media($max-width: $screen-sm) {
+    @include respond-max($screen-sm) { 
         > li {
             float: left;
             width: 50%;

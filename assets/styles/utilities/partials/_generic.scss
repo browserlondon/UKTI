@@ -50,13 +50,13 @@
 .text-interaction:hover { cursor: pointer; }
 
 .text-responsive-lg {
-    @include media($max-width: $screen-lg) {
+    @include respond-max($screen-lg) { 
         font-size: $font-size-sm;
     }
 }
 
 .text-responsive-md {
-    @include media($max-width: $screen-md) {
+    @include respond-max($screen-md) { 
         font-size: $font-size-sm;
     }
 }
@@ -64,17 +64,17 @@
 
 .text-lead { 
     font-size: $font-size-lead;
-    @include media($max-width: $screen-lg) {
+    @include respond-max($screen-lg) { 
         font-size: $font-size-h1;
     }
-    @include media($max-width: $screen-sm) {
+    @include respond-max($screen-sm) { 
         font-size: $font-size-h3;
     }
 }
 
 .text-sub { 
     font-size: $font-size-h4;
-    @include media($max-width: $screen-sm) {
+    @include respond-max($screen-sm) { 
         font-size: $font-size-h6;
     }
 }
@@ -128,7 +128,7 @@ strong, .strong { font-weight: bold; }
 
 .text-left { text-align: left; }
 .text-left-md {
-    @include media($max-width: $screen-md) {
+    @include respond-max($screen-md) { 
         text-align: left;
     }
 }
