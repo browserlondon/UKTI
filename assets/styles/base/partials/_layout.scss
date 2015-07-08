@@ -23,13 +23,13 @@
         box-sizing: border-box;
     }
     .grid__column--one-third {
-        width: 33.33333333%
+        width: 33.33333333%;
     }
     .grid__column--two-thirds {
-        width: 66.66666666%
+        width: 66.66666666%;
     }
     .grid__column--half {
-        width: 50%
+        width: 50%;
     }
     .grid__column--three-fourths {
         width: 75%;
@@ -41,9 +41,11 @@
 
 .grid__row--vertical-align {
     display: table;
+    width: 100%;
     .grid__column {
         display: table-cell;
         vertical-align: middle;
         float: none;
+        .no-display-table & { float: left; }
     }
 }

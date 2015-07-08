@@ -205,7 +205,7 @@ module.exports = function(grunt) {
                "files" : {
                    "src": [
                         "assets/scripts/src/**/*.js",
-                        "assets/styles/**/*.css"
+                        "assets/styles/main.css"
                     ]
                },
             },

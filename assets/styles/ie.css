@@ -487,9 +487,9 @@ hr,
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 .grid__row .grid__column--one-third {
-  width: 33.33333%; }
+  width: 33.33333333%; }
 .grid__row .grid__column--two-thirds {
-  width: 66.66667%; }
+  width: 66.66666666%; }
 .grid__row .grid__column--half {
   width: 50%; }
 .grid__row .grid__column--three-fourths {
@@ -498,11 +498,14 @@ hr,
   width: 25%; }
 
 .grid__row--vertical-align {
-  display: table; }
+  display: table;
+  width: 100%; }
   .grid__row--vertical-align .grid__column {
     display: table-cell;
     vertical-align: middle;
     float: none; }
+    .no-display-table .grid__row--vertical-align .grid__column {
+      float: left; }
 
 /*
 * Name: Typography
@@ -908,8 +911,9 @@ input[type=radio] {
     content: none;
     margin-left: 0;
     margin-right: 0; }
-  .btn:focus {
-    outline-offset: 0; }
+  .btn:hover, .btn:active, .btn:focus {
+    outline-offset: 0;
+    text-decoration: none; }
 
 .btn--success {
   background-color: #229068;
@@ -1137,8 +1141,6 @@ input[type=radio] {
     content: none;
     margin-left: 0;
     margin-right: 0; }
-  .btn--link:hover, .btn--link:active, .btn--link:focus {
-    text-decoration: none; }
 
 /*
 * Name: Tables
@@ -1591,6 +1593,8 @@ input[type=radio] {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
+  .no-csstransforms .section__btn {
+    margin-top: -14px; }
   .section__btn:active {
     top: 50%; }
 

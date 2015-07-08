@@ -14,7 +14,7 @@
 .masthead__area { width: 100%; }
 
 .masthead__area--align {
-    @include respond-min($screen-sm) { text-align: right; }
+    text-align: right
 }
 
 .masthead__subtext, .masthead__link {

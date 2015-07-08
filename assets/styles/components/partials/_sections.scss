@@ -85,5 +85,8 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    .no-csstransforms & {
+        margin-top: -14px;
+    }
     &:active { top: 50%; }
 }

@@ -6,7 +6,10 @@
 .btn {
     @include button($brand-primary);
     font-weight: normal;
-    &:focus { outline-offset: 0; }
+    @include on-interaction { 
+        outline-offset: 0;
+        text-decoration: none; 
+    }
 }
 
 .btn--success {
@@ -26,5 +29,4 @@
 
 .btn--link {
     @include button($brand-white);
-    @include on-interaction { text-decoration: none; }
 }
