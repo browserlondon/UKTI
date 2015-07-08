@@ -66,6 +66,11 @@ form {
     br { display: none; }
 }
 
+input[type="text"], input[type="email"], input[type="search"], input[type="password"], input[type="tel"], select {
+    -webkit-appearance: none;
+    -moz-appearance: none; /* mobile firefox too! */
+}
+
 input, button, .btn {
     line-height: normal;
 }
@@ -80,8 +85,6 @@ input[type=search] {
     box-sizing: border-box;
     width: 100%;
 }
-
-input[type="text"] { -webkit-appearance:none; }
 
 button,
 input[type=submit],
