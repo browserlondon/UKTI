@@ -816,6 +816,9 @@ input[type=search] {
   box-sizing: border-box;
   width: 100%; }
 
+input[type="text"] {
+  -webkit-appearance: none; }
+
 button,
 input[type=submit],
 input[type=button],
