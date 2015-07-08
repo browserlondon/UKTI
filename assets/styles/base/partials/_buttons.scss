@@ -5,16 +5,26 @@
 
 .btn {
     @include button($brand-primary);
+    font-weight: normal;
+    &:focus { outline-offset: 0; }
 }
 
 .btn--success {
     @include button($brand-success);
+    font-weight: normal
 }
 
 .btn--danger {
     @include button($brand-warning);
+    font-weight: normal
 }
 
 .btn--warning {
     @include button($brand-warning);
+    font-weight: normal
+}
+
+.btn--link {
+    @include button($brand-white);
+    @include on-interaction { text-decoration: none; }
 }

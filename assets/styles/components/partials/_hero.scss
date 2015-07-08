@@ -5,7 +5,10 @@
 * Notes:
 -------------------------------------------------------------- */
 
-.hero { @include guttering; }
+.hero { 
+    position: relative;
+    @include guttering; 
+}
 
 .hero__title {
     font-size: 36px;
@@ -18,4 +21,12 @@
 .hero__sub {
     font-weight: normal;
     max-width: 750px;
+}
+
+.hero__btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    &:active { top: 50%; }
 }

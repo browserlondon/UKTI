@@ -10,6 +10,7 @@
     padding: 30px;
     background-size: cover;
     border-bottom: 1px solid $brand-keyline;
+    @include guttering;
     &:last-child { border-bottom: 0; }
 }
 

@@ -32,8 +32,9 @@
     white-space: nowrap;
     vertical-align: middle;
     .btn { 
-        padding: 10px 8px 6px 8px; 
+        padding: 8px; 
         box-shadow: none;
+        &:active { top: 0; }
     }
 }
 

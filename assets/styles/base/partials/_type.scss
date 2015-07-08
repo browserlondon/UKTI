@@ -130,6 +130,11 @@ ol {
     }
 }
 
+em {
+    font-size: 85%;
+    color: $brand-grey-mid;
+}
+
 blockquote {
     margin-bottom: $guttering;
     padding: 0 $guttering;
