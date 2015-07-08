@@ -96,7 +96,7 @@
                         <div class="grid grid--zero-pad">
                             <div class="grid__row">
                                 <fieldset class="grid__column">
-                                    <label for="text">Filter by Sector</label>
+                                    <label for="cts_sector">Filter by Sector</label>
                                     <div class="input-group">
                                         <select name="cts_sector" id="cts_sector" class="list-bordered">
                                             <option selected="selected" value=""></option>
@@ -355,7 +355,7 @@
                                     </div>
                                 </fieldset>
                                 <fieldset class="grid__column grid__column--half">
-                                    <label for="text">Filter by UK Region</label>
+                                    <label for="cts_ukregion">Filter by UK Region</label>
                                     <div class="input-group">
                                         <select name="cts_ukregion" id="cts_ukregion" class="list-bordered">
                                             <option selected="selected" value=""></option>
@@ -378,7 +378,7 @@
                                     </div>
                                 </fieldset>
                                 <fieldset class="grid__column grid__column--half">
-                                    <label for="text">Filter by Country</label>
+                                    <label for="cts_country">Filter by Country</label>
                                     <div class="input-group">
                                         <select name="cts_country" id="cts_country" class="list-bordered">
                                             <option selected="selected" value=""></option>
@@ -636,7 +636,7 @@
                             </div>
                             <div class="grid__row">
                                 <fieldset class="grid__column grid__column--half">
-                                    <label for="text">Filter by Status</label>
+                                    <label for="cts_projectstatus">Filter by Status</label>
                                     <div class="input-group">
                                         <select name="cts_projectstatus" id="cts_projectstatus" class="list-bordered">
                                             <option selected="selected" value=""></option>
@@ -650,7 +650,7 @@
                                     </div>
                                 </fieldset>
                                 <fieldset class="grid__column grid__column--half">
-                                    <label for="text">Filter by Stage</label>
+                                    <label for="cts_projectstage">Filter by Stage</label>
                                     <div class="input-group">
                                         <select name="cts_projectstage" id="cts_projectstage" class="list-bordered">
                                             <option selected="selected" value=""></option>
@@ -674,7 +674,7 @@
                 <h2>Opportunities List</h2>
                 <div class="table-responsive">
                     <table class="table table--bordered" cellspacing="0" rules="all" border="1" id="gvOrganisations">
-                        <tbody>
+                        <thead>
                             <tr>
                                 <th scope="col">Organisation Name </th>
                                 <th scope="col">Alias</th>
@@ -683,6 +683,8 @@
                                 <th scope="col">Postcode</th>
                                 <th scope="col">Country</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <td><a href=".\organisation.aspx?entityname=account&amp;entityid=191d3c56-7313-e511-80c9-000d3a219203">A Test Organisation</a></td>
                                 <td>TO</td>

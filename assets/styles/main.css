@@ -1097,6 +1097,8 @@ input[type=radio] {
   max-width: 100%;
   background-color: transparent;
   width: 100%; }
+  .table > thead {
+    background-color: #fafafa; }
   .table > thead > tr > th,
   .table > thead > tr > td,
   .table > tbody > tr > th,
@@ -1153,9 +1155,6 @@ input[type=radio] {
   .table--bordered > tfoot > tr > td {
     border: 1px solid;
     border-color: #EAEAEA; }
-  .table--bordered > thead > tr > th,
-  .table--bordered > thead > tr > td {
-    border-bottom-width: 2px; }
 
 .table--bordered-columns > tbody > tr > th,
 .table--bordered-columns > tbody > tr > td,
