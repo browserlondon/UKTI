@@ -1510,7 +1510,8 @@ input[type=radio] {
   padding: 30px;
   -webkit-background-size: cover;
   background-size: cover;
-  border-bottom: 1px solid #EAEAEA; }
+  border-bottom: 1px solid #EAEAEA;
+  position: relative; }
   .section > *:last-child, .section > *:last-child > *:last-child, .section > *:last-child > *:last-child > *:last-child {
     margin-bottom: 0; }
   .section:last-child {
@@ -1544,6 +1545,24 @@ input[type=radio] {
   .section--blocked:last-child {
     margin-bottom: 0; }
 
+.section--collapsible .section__body {
+  padding-top: 30px; }
+.section--collapsible.closed {
+  overflow: hidden;
+  padding-bottom: 0; }
+  .section--collapsible.closed .section__body {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden; }
+.section--collapsible.open {
+  overflow: auto;
+  height: 100%; }
+  .section--collapsible.open .section__body {
+    height: 100%;
+    opacity: 1;
+    visibility: visible; }
+
 .section__content {
   margin: auto;
   display: block; }
@@ -1552,6 +1571,23 @@ input[type=radio] {
 
 .section__content--sm {
   max-width: 650px; }
+
+.section__head, .section__body {
+  position: relative;
+  -webkit-transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+  transition: opacity .2s ease-in-out, visibility .2s ease-in-out; }
+  .section__head > *:last-child, .section__head > *:last-child > *:last-child, .section__head > *:last-child > *:last-child > *:last-child, .section__body > *:last-child, .section__body > *:last-child > *:last-child, .section__body > *:last-child > *:last-child > *:last-child {
+    margin-bottom: 0; }
+
+.section__btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+  .section__btn:active {
+    top: 50%; }
 
 /*
 * Name: Back to top
@@ -1637,16 +1673,6 @@ input[type=radio] {
 .hero__sub {
   font-weight: normal;
   max-width: 750px; }
-
-.hero__btn {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
-  .hero__btn:active {
-    top: 50%; }
 
 /* ==========================================================================
    Plugins

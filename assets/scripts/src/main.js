@@ -10,10 +10,10 @@ require.config({
     },
 });
 
-requirejs(["app/fastclick"]);
 requirejs(["app/back-to-top"]);
 requirejs(["app/fixed-nav"]);
 requirejs(["app/polyfills"]);
+requirejs(["app/collapsible"]);
 
 var hasClass = function (elem, className) {
     return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');

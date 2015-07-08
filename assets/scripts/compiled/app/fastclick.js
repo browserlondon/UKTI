@@ -1,1 +1,0 @@
-require(["fastclick"],function(e){var t={};t.fastclick=function(){var t={};return t.init=function(){"addEventListener"in document&&document.addEventListener("DOMContentLoaded",function(){e.attach(document.body)},!1)},t}(),t.fastclick.init()});

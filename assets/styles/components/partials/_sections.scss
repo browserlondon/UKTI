@@ -10,15 +10,12 @@
     padding: 30px;
     background-size: cover;
     border-bottom: 1px solid $brand-keyline;
+    position: relative;
     @include guttering;
     &:last-child { border-bottom: 0; }
 }
 
-.section--sm {
-    @include respond-min($screen-lg) { 
-        padding: $guttering*2;
-    }
-}
+.section--sm { @include respond-min($screen-lg) { padding: $guttering*2; } }
 
 .section--primary {
     background-color: $brand-primary;
@@ -30,25 +27,40 @@
     color: white;
 }
 
-.section--plain {
-    background-color: $brand-white;
-}
+.section--plain { background-color: $brand-white; }
 
-.section--subtle-highlight {
-    background-color: $brand-grey-lighter;
-}
+.section--subtle-highlight { background-color: $brand-grey-lighter; }
 
-.section--bordered {
-    border-top: 10px solid $brand-primary;
-}
+.section--bordered { border-top: 10px solid $brand-primary; }
 
-.section--keyline {
-    border: 1px solid $brand-keyline;
-}
+.section--keyline { border: 1px solid $brand-keyline; }
 
 .section--blocked {
     margin-bottom: $guttering;
     &:last-child { margin-bottom: 0; }
+}
+
+.section--collapsible {
+    .section__body { padding-top: 30px; }
+    &.closed {
+        overflow: hidden;
+        padding-bottom: 0;
+        .section__body {
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+        }
+    }
+    &.open {
+        overflow: auto;
+        height: 100%;
+        .section__body {
+            height: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+    } 
 }
 
 .section__content {
@@ -57,6 +69,18 @@
     @include guttering; 
 }
 
-.section__content--sm {
-    max-width: 650px;
+.section__content--sm { max-width: 650px; }
+
+.section__head, .section__body {
+    position: relative;
+    transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+    @include guttering;
+}
+
+.section__btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    &:active { top: 50%; }
 }
