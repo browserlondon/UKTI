@@ -445,8 +445,9 @@ hr,
   width: 25%; }
 
 .grid__row--vertical-align {
-  display: table;
-  width: 100%; }
+  display: table; }
+  .lt-ie9 .grid__row--vertical-align {
+    width: 100%; }
   .grid__row--vertical-align .grid__column {
     display: table-cell;
     vertical-align: middle;
