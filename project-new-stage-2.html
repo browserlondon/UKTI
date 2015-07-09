@@ -1238,7 +1238,15 @@
     </div>
     <script src="/assets/scripts/compiled/libs/modernizr-custom.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <script src="/assets/scripts/compiled/libs/pikaday.js"></script>
+    <script src="/assets/scripts/compiled/libs/pikaday.jquery.js"></script>
+    <script>
+        // activate datepickers for all elements with a class of `datepicker`
+        $('.datepicker').pikaday({
+            format: 'DD/MM/YYYY'
+        });
+    </script>
     <script src="/assets/scripts/compiled/libs/require.min.js" data-main="/assets/scripts/compiled/main"></script>
 </body>
-
 </html>
