@@ -1261,11 +1261,11 @@ input[type=radio] {
     background: transparent;
     padding: 0 7.5px 7.5px 0; }
 
-.table-responsive {
+.table-responsive div {
   margin-bottom: 2.4rem; }
-  .table-responsive:last-child {
+  .table-responsive div:last-child {
     margin-bottom: 0; }
-  .table-responsive > .table {
+  .table-responsive div > .table {
     margin-bottom: 0; }
 
 .table__cell--action {
