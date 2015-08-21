@@ -24,6 +24,7 @@
     "grunt-pixrem": "^0.1.2",
     "grunt-svg2png": "^0.2.5",
     "grunt-svgmin": "~0.3.0",
+    "imagemin": "^3.2.0",
     "jshint-stylish": "~0.1.3",
     "load-grunt-tasks": "~0.2.0",
     "time-grunt": "~0.2.8"
