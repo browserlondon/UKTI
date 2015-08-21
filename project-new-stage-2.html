@@ -1242,10 +1242,17 @@
     <script src="/assets/scripts/compiled/libs/pikaday.js"></script>
     <script src="/assets/scripts/compiled/libs/pikaday.jquery.js"></script>
     <script>
-        // activate datepickers for all elements with a class of `datepicker`
-        $('.datepicker').pikaday({
-            format: 'DD/MM/YYYY'
-        });
+        var picker = new Pikaday(
+            {
+                field: document.querySelector('.datepicker'),
+                format: 'DD/MM/YYYY',
+                onSelect: function() {
+                    var date = document.createTextNode(this.getMoment().format('DD/MM/YYYY') + ' ');
+                    document.getElementById('selected').appendChild(date);
+                }
+            });
+            
+        picker.setMoment(moment());
     </script>
     <script src="/assets/scripts/compiled/libs/require.min.js" data-main="/assets/scripts/compiled/main"></script>
 </body>
