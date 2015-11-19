@@ -41,6 +41,7 @@
 
 .grid__row--vertical-align {
     display: table;
+    width: 100%;
     .lt-ie9 & { width: 100% }
     .grid__column {
         display: table-cell;
