@@ -37,11 +37,6 @@ td {
 
 th, td {
     padding: $padding__table;
-
-    .table--bordered & {
-        border-width: $border__table;
-        border-style: solid;
-    }
 }
 
 th, dt {

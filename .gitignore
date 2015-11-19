@@ -1,10 +1,11 @@
-.DS_Store*
+.DS_Store
 thumbs.db
 Icon?
 Thumbs.db
 .sass-cache/
 .sass-cache/*
-node_modules/
+node_modules
+node_modules/*
 .*.swp
 vhost.conf
 web/sitemap.xml

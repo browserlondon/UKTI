@@ -9,7 +9,9 @@
     max-width: 100%;
     background-color: $table-bg;
     width: 100%;
-    > thead { background-color: $brand-grey-lighter; }
+    > thead { 
+        background-color: $brand-grey-lighter; 
+    }
     // Cells
     > thead,
     > tbody,
@@ -47,12 +49,24 @@
         border-color: $brand-keyline;
     }
 
-    th { text-align: left; }
+    th { 
+        text-align: left; 
+    }
 
-    abbr { border-bottom: 0; }
+    abbr { 
+        border-bottom: 0; 
+    }
 
     // Nesting
-    .table { margin-bottom: 0; }
+    .table, table { 
+        margin-bottom: 0; 
+    }
+}
+
+.table--nested-children {
+    table, .table {
+        width: auto;
+    }
 }
 
 .table--outlined {
@@ -82,29 +96,26 @@
 // Add borders all around the table and between all the columns.
 
 .table--bordered {
-    border: 1px solid;
-    border-color: $brand-keyline;
-    > thead,
-    > tbody,
-    > tfoot {
-        > tr {
-            > th,
-            > td {
-                border: 1px solid;
-                border-color: $brand-keyline;
+    border: 1px solid $brand-keyline;
+    thead,
+    tbody,
+    tfoot {
+        tr {
+            th,
+            td {
+                border: 1px solid $brand-keyline;
             }
         }
     }
 }
 
 .table--bordered-columns {
-    > tbody,
-    > tfoot {
-        > tr {
-            > th,
-            > td {
-                border-right: 1px solid;
-                border-color: $brand-keyline;
+    tbody,
+    tfoot {
+        tr {
+            th,
+            td {
+                border-right: 1px solid $brand-keyline;
                 &:last-child {
                     border-right: 0;
                 }
@@ -114,11 +125,10 @@
 }
 
 .table--bordered-rows {
-    > tbody,
-    > tfoot {
-        > tr {
-            border-bottom: 1px solid;
-            border-color: $brand-keyline;
+    tbody,
+    tfoot {
+        tr {
+            border-bottom: 1px solid $brand-keyline;
             &:last-child {
                 border-bottom: 0;
             }
@@ -130,12 +140,12 @@
 .table--vertical-align {
     width: 100%;
     // Cells
-    > thead,
-    > tbody,
-    > tfoot {
-        > tr {
-            > th,
-            > td {
+    thead,
+    tbody,
+    tfoot {
+        tr {
+            th,
+            td {
                 vertical-align: top;
             }
         }
@@ -147,9 +157,9 @@
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
 .table--striped {
-    > tbody > tr:nth-child(even) {
-        > td,
-        > th {
+    tbody tr:nth-child(even) {
+        td,
+        th {
             background-color: $table-bg-accent;
         }
     }
@@ -160,25 +170,11 @@
 // Placed here since it has to come after the potential zebra striping
 
 .table--hover {
-    > tbody > tr:hover {
-        > td,
-        > th {
+    tbody tr:hover {
+        td,
+        th {
             cursor: pointer;
             background-color: rgba($brand-keyline, 0.2);
-        }
-    }
-}
-
-.table--population {
-    margin-bottom: -.25em;
-    width: auto;
-    tbody {
-        tr {
-            td {
-                border-top: none;
-                background: transparent;
-                padding: 0 ($table-condensed-cell-padding * 1.5) ($table-condensed-cell-padding * 1.5) 0;
-            }
         }
     }
 }
@@ -254,13 +250,4 @@
             border: 0;
         }
     }
-}
-
-.table__cell {}
-
-.table__cell--action { width: 55px; }
-
-.table__row--pulse {
-    background-color: #FFFFCC;
-    transition: background-color 1s linear;
 }

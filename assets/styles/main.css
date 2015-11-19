@@ -361,9 +361,6 @@ td {
 
 th, td {
   padding: 0.5em; }
-  .table--bordered th, .table--bordered td {
-    border-width: 1px;
-    border-style: solid; }
 
 th, dt {
   font-weight: bold; }
@@ -1133,8 +1130,11 @@ input[type=radio] {
     text-align: left; }
   .table abbr {
     border-bottom: 0; }
-  .table .table {
+  .table .table, .table table {
     margin-bottom: 0; }
+
+.table--nested-children table, .table--nested-children .table {
+  width: auto; }
 
 .table--outlined {
   border-top: 1px solid;
@@ -1151,63 +1151,51 @@ input[type=radio] {
   padding: 5px; }
 
 .table--bordered {
-  border: 1px solid;
-  border-color: #EAEAEA; }
-  .table--bordered > thead > tr > th,
-  .table--bordered > thead > tr > td,
-  .table--bordered > tbody > tr > th,
-  .table--bordered > tbody > tr > td,
-  .table--bordered > tfoot > tr > th,
-  .table--bordered > tfoot > tr > td {
-    border: 1px solid;
-    border-color: #EAEAEA; }
+  border: 1px solid #EAEAEA; }
+  .table--bordered thead tr th,
+  .table--bordered thead tr td,
+  .table--bordered tbody tr th,
+  .table--bordered tbody tr td,
+  .table--bordered tfoot tr th,
+  .table--bordered tfoot tr td {
+    border: 1px solid #EAEAEA; }
 
-.table--bordered-columns > tbody > tr > th,
-.table--bordered-columns > tbody > tr > td,
-.table--bordered-columns > tfoot > tr > th,
-.table--bordered-columns > tfoot > tr > td {
-  border-right: 1px solid;
-  border-color: #EAEAEA; }
-  .table--bordered-columns > tbody > tr > th:last-child,
-  .table--bordered-columns > tbody > tr > td:last-child,
-  .table--bordered-columns > tfoot > tr > th:last-child,
-  .table--bordered-columns > tfoot > tr > td:last-child {
+.table--bordered-columns tbody tr th,
+.table--bordered-columns tbody tr td,
+.table--bordered-columns tfoot tr th,
+.table--bordered-columns tfoot tr td {
+  border-right: 1px solid #EAEAEA; }
+  .table--bordered-columns tbody tr th:last-child,
+  .table--bordered-columns tbody tr td:last-child,
+  .table--bordered-columns tfoot tr th:last-child,
+  .table--bordered-columns tfoot tr td:last-child {
     border-right: 0; }
 
-.table--bordered-rows > tbody > tr,
-.table--bordered-rows > tfoot > tr {
-  border-bottom: 1px solid;
-  border-color: #EAEAEA; }
-  .table--bordered-rows > tbody > tr:last-child,
-  .table--bordered-rows > tfoot > tr:last-child {
+.table--bordered-rows tbody tr,
+.table--bordered-rows tfoot tr {
+  border-bottom: 1px solid #EAEAEA; }
+  .table--bordered-rows tbody tr:last-child,
+  .table--bordered-rows tfoot tr:last-child {
     border-bottom: 0; }
 
 .table--vertical-align {
   width: 100%; }
-  .table--vertical-align > thead > tr > th,
-  .table--vertical-align > thead > tr > td,
-  .table--vertical-align > tbody > tr > th,
-  .table--vertical-align > tbody > tr > td,
-  .table--vertical-align > tfoot > tr > th,
-  .table--vertical-align > tfoot > tr > td {
+  .table--vertical-align thead tr th,
+  .table--vertical-align thead tr td,
+  .table--vertical-align tbody tr th,
+  .table--vertical-align tbody tr td,
+  .table--vertical-align tfoot tr th,
+  .table--vertical-align tfoot tr td {
     vertical-align: top; }
 
-.table--striped > tbody > tr:nth-child(even) > td,
-.table--striped > tbody > tr:nth-child(even) > th {
+.table--striped tbody tr:nth-child(even) td,
+.table--striped tbody tr:nth-child(even) th {
   background-color: #f9f9f9; }
 
-.table--hover > tbody > tr:hover > td,
-.table--hover > tbody > tr:hover > th {
+.table--hover tbody tr:hover td,
+.table--hover tbody tr:hover th {
   cursor: pointer;
   background-color: rgba(234, 234, 234, 0.2); }
-
-.table--population {
-  margin-bottom: -.25em;
-  width: auto; }
-  .table--population tbody tr td {
-    border-top: none;
-    background: transparent;
-    padding: 0 7.5px 7.5px 0; }
 
 .table-responsive div {
   margin-bottom: 2.4rem; }
@@ -1215,14 +1203,6 @@ input[type=radio] {
     margin-bottom: 0; }
   .table-responsive div > .table {
     margin-bottom: 0; }
-
-.table__cell--action {
-  width: 55px; }
-
-.table__row--pulse {
-  background-color: #FFFFCC;
-  -webkit-transition: background-color 1s linear;
-  transition: background-color 1s linear; }
 
 /* ==========================================================================
    Components
